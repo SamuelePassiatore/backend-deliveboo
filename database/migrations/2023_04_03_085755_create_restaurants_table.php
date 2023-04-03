@@ -22,6 +22,8 @@ return new class extends Migration
             $table->text('description')->required();
             $table->text('photo')->required();
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

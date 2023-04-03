@@ -22,6 +22,8 @@ return new class extends Migration
             $table->boolean('is_vegan');
             $table->boolean('is_vegetarian');
             $table->timestamps();
+
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
         });
     }
 
