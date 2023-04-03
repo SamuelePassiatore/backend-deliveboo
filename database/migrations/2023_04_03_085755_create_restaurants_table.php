@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('phone', 15)->required();
             $table->string('mail', 60)->required();
             $table->text('description')->required();
-            $table->text('photo')->required()->default('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png');
+            $table->text('photo')->required();
             $table->timestamps();
         });
     }

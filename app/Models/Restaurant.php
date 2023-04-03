@@ -9,6 +9,8 @@ class Restaurant extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['restaurant_name', 'address', 'vat', 'phone', 'mail', 'description', 'photo'];
+
     // Allocate the relation with user in restaurant model
     public function user()
     {
