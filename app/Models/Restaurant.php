@@ -16,4 +16,10 @@ class Restaurant extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // Allocate the relation with plates in restaurant model
+    public function plates()
+    {
+        return $this->hasMany(Plate::class, 'restaurant_id');
+    }
 }
