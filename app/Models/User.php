@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Allocate the relation with restaurant in user model
+    public function restaurant()
+    {
+        return $this->hasOne(Restaurant::class, 'user_id');
+    }
 }
