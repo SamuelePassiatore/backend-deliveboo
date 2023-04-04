@@ -137,7 +137,7 @@ class RestaurantController extends Controller
 
         return to_route('admin.restaurants.show', $restaurant->id)
             ->with('type', 'success')
-            ->with('message', "Il ristorante $restaurant->restaurant_name' è stato modificato con successo");
+            ->with('message', "Il ristorante $restaurant->restaurant_name è stato modificato con successo");
     }
 
     /**

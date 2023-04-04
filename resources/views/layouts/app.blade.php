@@ -100,7 +100,8 @@
             </div>
         </nav>
 
-        <main class="">
+        <main class="container">
+            @include('includes.alerts.session')
             @yield('content')
         </main>
     </div>
