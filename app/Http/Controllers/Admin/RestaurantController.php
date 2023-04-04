@@ -92,17 +92,52 @@ class RestaurantController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Restaurant $restaurant)
     {
-        //
+        return view('admin.restaurants.edit', compact('restaurant'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Restaurant $restaurant)
     {
-        //
+        $request->validate([
+            'restaurant_name' => 'required|string',
+            'address' => 'required|string',
+            'vat' => 'required|string',
+            'phone' => 'required|string',
+            'mail' => 'required|string',
+            'description' => 'required|string',
+            'photo' => 'image',
+        ], [
+            'restaurant_name.required' => "È necessario inserire un nome",
+            'restaurant_name.string' => "Il nome inserito non è valido",
+            'address.required' => "È necessario inserire un indirizzo",
+            'address.string' => "L'indirizzo inserito non è valido",
+            'vat.required' => "È necessario inserire una P.IVA",
+            'vat.string' => "La P.IVA inserita non è valida",
+            'phone.required' => "È necessario inserire un numero di telefono",
+            'phone.string' => "Il numero di telefono inserito non è valido",
+            'mail.required' => "È necessario inserire una mail",
+            'mail.string' => "La email inserita non è valida",
+            'description.required' => "È necessario inserire una descrizione",
+            'description.string' => "La descrizione inserita non è valida",
+            'photo.image' => "L'immagine inserita non è valida",
+        ]);
+
+        $data = $request->all();
+
+        if (array_key_exists('photo', $data)) {
+            $img_url = Storage::put('restaurants', $data['photo']);
+            $data['photo'] = $img_url;
+        }
+
+        $restaurant->update($data);
+
+        return to_route('admin.restaurants.show', $restaurant->id)
+            ->with('type', 'success')
+            ->with('message', "Il ristorante $restaurant->restaurant_name' è stato modificato con successo");
     }
 
     /**
