@@ -12,6 +12,6 @@ class Type extends Model
     // Allocate the relation with restaurants in model type
     public function restaurants()
     {
-        return $this->belongsToMany(Type::class);
+        return $this->belongsToMany(Restaurant::class);
     }
 }
