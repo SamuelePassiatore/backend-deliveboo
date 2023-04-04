@@ -16,4 +16,10 @@ class Plate extends Model
     {
         return $this->belongsTo(Restaurant::class);
     }
+
+    // Allocate the relation with orders in model plate
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
 }
