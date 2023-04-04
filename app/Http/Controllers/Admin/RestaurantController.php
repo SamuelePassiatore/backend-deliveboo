@@ -3,16 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $restaurants = Restaurant::where('user_id', 'LIKE', Auth::user()->id)->get();
+        return view('admin.restaurants.index', compact('restaurants'));
     }
 
     /**
