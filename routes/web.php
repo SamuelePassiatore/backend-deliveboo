@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Guest\HomeController as GuestHomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\RestaurantController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,14 +19,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GuestHomeController::class, 'index']);
 
- Route::get('/dashboard', function () {
-     return view('dashboard');
- })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 // ! TO DO
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('/admin')->group(function () {
     // Dashboard routes
-     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
+    Route::get('/', [AdminHomeController::class, 'index'])->name('home');
+    // Restaurant routes
+    Route::resource('restaurants', RestaurantController::class);
 });
 
 Route::middleware('auth')->group(function () {
@@ -34,4 +37,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
