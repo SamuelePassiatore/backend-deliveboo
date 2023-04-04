@@ -15,7 +15,7 @@
                     {{-- RESTAURANT IMG  --}}
                     <div class="col d-flex justify-content-center pt-5">
                         @if ($restaurant->photo)
-                            <img src="{{ asset($restaurant->photo) }}" alt="{{ $restaurant->restaurant_name }}"
+                            <img src="{{ asset('storage/' . $restaurant->photo) }}" alt="{{ $restaurant->restaurant_name }}"
                                 class="rounded overflow-hidden ">
                         @endif
                     </div>

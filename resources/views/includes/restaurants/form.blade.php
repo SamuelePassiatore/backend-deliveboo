@@ -1,20 +1,20 @@
 {{-- Form --}}
-{{-- @if ($restaurant->exists)
+@if ($restaurant->exists)
     <form action="{{ route('admin.restaurants.update', $restaurant->id) }}" method="POST" enctype="multipart/form-data"
         novalidate>
         @method('PUT')
     @else
         <form action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data" novalidate>
-@endif --}}
+@endif
 
 
-{{-- @csrf --}}
+@csrf
 <div class="row">
     <div class="col-4">
         <div class="mb-3">
-            <label for="restaurant_name" class="form-label">Name:</label>
-            <input type="text" class="form-control @error('restaurant_name') is-invalid @enderror" id="restaurant_name"
-                placeholder="Inserisci un nome" name="restaurant_name" required
+            <label for="restaurant_name" class="form-label">Nome:</label>
+            <input type="text" class="form-control @error('restaurant_name') is-invalid @enderror"
+                id="restaurant_name" placeholder="Inserisci un nome" name="restaurant_name" required
                 value="{{ old('restaurant_name', $restaurant->restaurant_name) }}">
             @error('restaurant_name')
                 <div class="invalid-feedback">
@@ -65,7 +65,7 @@
     <div class="col-4">
         <div class="mb-3">
             <label for="mail" class="form-label">Email:</label>
-            <input type="text" class="form-control @error('mail') is-invalid @enderror" id="mail"
+            <input type="email" class="form-control @error('mail') is-invalid @enderror" id="mail"
                 placeholder="Inserisci una mail" name="mail" required value="{{ old('mail', $restaurant->mail) }}">
             @error('mail')
                 <div class="invalid-feedback">
@@ -111,6 +111,6 @@
 <hr>
 <div class="d-flex justify-content-between mb-3">
     <a href="{{ route('admin.restaurants.index') }}" class="btn btn-secondary me-2">Indietro</a>
-    {{-- <button type="submit" class="btn btn-primary">Save</button> --}}
+    <button type="submit" class="btn btn-primary">Salva</button>
 </div>
 </form>
