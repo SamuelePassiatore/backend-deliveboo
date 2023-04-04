@@ -25,6 +25,7 @@
                     <th scope="col">P.IVA</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Ultima modifica</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -37,29 +38,32 @@
                         <td>{{ $restaurant->vat }}</td>
                         <td>{{ $restaurant->phone }}</td>
                         <td>{{ $restaurant->mail }}</td>
+                        <td>{{ $restaurant->updated_at }}</td>
                         <td>
-                            {{-- <div class="d-flex">
-                                <a class="btn btn-sm btn-primary" href="{{ route('admin.restaurants.show', $restaurant->id) }}">
+                            <div class="d-flex">
+                                <a class="btn btn-sm btn-primary"
+                                    href="{{ route('admin.restaurants.show', $restaurant->id) }}">
                                     <i class="fas fa-eye"></i>
                                 </a>
-    
-                                    <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
-                                        class="delete-form">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit" class="btn btn-sm btn-danger mx-2">
-                                            <i class="fas fa-trash"></i>
-                                        </button>
-                                    </form>
-                                    <a class="btn btn-sm btn-warning" href="{{ route('admin.restaurants.edit', $restaurant->id) }}">
-                                        <i class="fas fa-pencil"></i>
-                                    </a>
-                            </div> --}}
+
+                                {{-- <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
+                                    class="delete-form">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm btn-danger mx-2">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
+                                <a class="btn btn-sm btn-warning"
+                                    href="{{ route('admin.restaurants.edit', $restaurant->id) }}">
+                                    <i class="fas fa-pencil"></i>
+                                </a> --}}
+                            </div>
                         </td>
                     </tr>
                 @empty
                     <tr>
-                        <td scope="row" colspan="7" class="text-center">Non ci sono ristoranti</td>
+                        <td scope="row" colspan="8" class="text-center">Non ci sono ristoranti</td>
                     </tr>
                 @endforelse
             </tbody>

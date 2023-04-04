@@ -14,7 +14,7 @@ class RestaurantController extends Controller
      */
     public function index(Request $request)
     {
-        $restaurants = Restaurant::where('user_id', 'LIKE', Auth::user()->id)->get();
+        $restaurants = Restaurant::where('user_id', 'LIKE', Auth::user()->id)->orderBy('updated_at')->get();
         return view('admin.restaurants.index', compact('restaurants'));
     }
 
@@ -37,9 +37,9 @@ class RestaurantController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Restaurant $restaurant)
     {
-        //
+        return view('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
