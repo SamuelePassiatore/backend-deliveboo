@@ -21,11 +21,7 @@
             <!-- Left Side Of Navbar -->
 
             <ul class="navbar-nav me-auto">
-                @if (!Auth::user())
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}">{{ __('Home') }}</a>
-                    </li>
-                @endif
+                {{-- Vuoto --}}
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -33,11 +29,11 @@
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('Accedi') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                         </li>
                     @endif
                 @else
