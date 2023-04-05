@@ -19,13 +19,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [GuestHomeController::class, 'index']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin', function () {
+    return view('admin.home');
+})->middleware(['auth', 'verified'])->name('admin');
 
 // ! TO DO
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('/admin')->group(function () {
-    // Dashboard routes
+    // Panel of control routes
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
     // Restaurant routes
     Route::resource('restaurants', RestaurantController::class);
