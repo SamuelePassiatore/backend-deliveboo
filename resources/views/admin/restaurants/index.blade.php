@@ -12,6 +12,9 @@
                         <i class="fas fa-plus me-2"></i>Crea ristorante
                     </a>
                 @endif
+                <a href="{{ route('admin.home') }}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left me-2"></i>Indietro
+                </a>
             </div>
         </header>
 
