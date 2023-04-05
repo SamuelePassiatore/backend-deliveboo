@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Guest\HomeController as GuestHomeController;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\PlateController;
 use App\Http\Controllers\Admin\RestaurantController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,8 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('/admin')->group
     Route::get('/', [AdminHomeController::class, 'index'])->name('home');
     // Restaurant routes
     Route::resource('restaurants', RestaurantController::class);
+    // Plates routes
+    Route::resource('plates', PlateController::class);
 });
 
 Route::middleware('auth')->group(function () {
