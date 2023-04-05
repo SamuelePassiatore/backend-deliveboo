@@ -16,7 +16,7 @@ class RestaurantController extends Controller
      */
     public function index(Request $request)
     {
-        $restaurants = Restaurant::where('user_id', 'LIKE', Auth::user()->id)->orderBy('updated_at')->get();
+        $restaurants = Restaurant::where('user_id', 'LIKE', Auth::user()->id)->get();
         return view('admin.restaurants.index', compact('restaurants'));
     }
 
@@ -25,6 +25,12 @@ class RestaurantController extends Controller
      */
     public function create()
     {
+        if (Auth::user()->restaurants->count() > 0) {
+            return redirect()->route('admin.restaurants.index')
+                ->with('message', "Non sei autorizzato a creare un nuovo ristorante")
+                ->with('type', 'danger');
+        }
+
         $restaurant = new Restaurant();
         return view('admin.restaurants.create', compact('restaurant'));
     }

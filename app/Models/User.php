@@ -43,8 +43,8 @@ class User extends Authenticatable
     ];
 
     // Allocate the relation with restaurant in user model
-    public function restaurant()
+    public function restaurants()
     {
-        return $this->hasOne(Restaurant::class, 'user_id');
+        return $this->hasMany(Restaurant::class);
     }
 }

@@ -5,14 +5,13 @@
 @section('content')
     <div class="container">
         <header class="my-4 d-flex align-items-center justify-content-between">
-            <h1>I tuoi ristoranti</h1>
-            <div class="d-flex align-items-center">
-                <form method="GET" action="{{ route('admin.restaurants.index') }}" class="me-5 d-flex" id="filter-form">
-            </div>
+            <h1>Il tuo ristorante</h1>
             <div>
-                <a href="{{ route('admin.restaurants.create') }}" class="btn btn-success me-2">
-                    <i class="fas fa-plus me-2"></i>Crea ristorante
-                </a>
+                @if (count($restaurants) == 0)
+                    <a href="{{ route('admin.restaurants.create') }}" class="btn btn-success me-2">
+                        <i class="fas fa-plus me-2"></i>Crea ristorante
+                    </a>
+                @endif
             </div>
         </header>
 
@@ -48,8 +47,8 @@
 
                                 <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
                                     class="delete-form">
-                                    @method('DELETE')
                                     @csrf
+                                    @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger mx-2">
                                         <i class="fas fa-trash"></i>
                                     </button>

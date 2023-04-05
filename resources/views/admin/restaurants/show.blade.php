@@ -50,11 +50,12 @@
                     <a href="{{ route('admin.restaurants.index') }}" class="btn btn-secondary me-2">
                         <i class="fas fa-arrow-left me-2"></i>Indietro
                     </a>
-                    {{-- <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST" class="delete-form">
+                    <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
+                        class="delete-form">
                         @method('DELETE')
                         @csrf
                         <button type="submit" class="btn btn-danger mx-2"><i class="fas fa-trash me-2"></i>Elimina</button>
-                    </form> --}}
+                    </form>
                     {{-- <a class="btn btn-warning" href="{{ route('admin.restaurants.edit', $restaurant->id) }}">
                         <i class="fas fa-pencil me-2"></i>Modifica
                     </a> --}}
