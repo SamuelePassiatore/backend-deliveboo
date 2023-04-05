@@ -36,6 +36,9 @@
                         </div>
                         <div class="my-2"><strong>Email: </strong> {{ $restaurant->mail }}
                         </div>
+                        <div class="my-2"><strong>Type: </strong>
+                            {{ $restaurant->type?->name ? $restaurant->type->name : '-' }}
+                        </div>
                         <div class="my-2"><strong>Creato il:
                             </strong><time>{{ $restaurant->created_at }}</time>
                         </div>
@@ -47,7 +50,7 @@
 
                 {{-- BUTTONS --}}
                 <div class="d-flex justify-content-between my-5">
-                    <a href="{{ route('admin.restaurants.index') }}" class="btn btn-secondary me-2">
+                    <a href="{{ route('admin.restaurants.index') }}" class="btn btn-secondary">
                         <i class="fas fa-arrow-left me-2"></i>Indietro
                     </a>
                     <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
@@ -56,9 +59,9 @@
                         @csrf
                         <button type="submit" class="btn btn-danger mx-2"><i class="fas fa-trash me-2"></i>Elimina</button>
                     </form>
-                    {{-- <a class="btn btn-warning" href="{{ route('admin.restaurants.edit', $restaurant->id) }}">
+                    <a class="btn btn-warning" href="{{ route('admin.restaurants.edit', $restaurant->id) }}">
                         <i class="fas fa-pencil me-2"></i>Modifica
-                    </a> --}}
+                    </a>
                 </div>
             </div>
         </section>

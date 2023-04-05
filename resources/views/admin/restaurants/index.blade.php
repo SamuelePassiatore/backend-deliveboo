@@ -24,6 +24,7 @@
                     <th scope="col">P.IVA</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Tipo</th>
                     <th scope="col">Ultima modifica</th>
                     <th scope="col"></th>
                 </tr>
@@ -37,6 +38,15 @@
                         <td>{{ $restaurant->vat }}</td>
                         <td>{{ $restaurant->phone }}</td>
                         <td>{{ $restaurant->mail }}</td>
+                        <td>
+                            @if ($restaurant->type)
+                                <span>
+                                    {{ $restaurant->type->name }}
+                                </span>
+                            @else
+                                <div class="text-center">-</div>
+                            @endif
+                        </td>
                         <td>{{ $restaurant->updated_at }}</td>
                         <td>
                             <div class="d-flex">

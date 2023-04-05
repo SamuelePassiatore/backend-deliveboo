@@ -107,6 +107,15 @@
             @enderror
         </div>
     </div>
+    <div class="col-12 d-flex align-items-center justify-content-center mt-5">
+        @foreach ($types as $type)
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="type-{{ $type->id }}"
+                    value="{{ $type->id }}" name="types[]" @checked(in_array($type->id, old('types', $restaurant_types ?? [])))>
+                <label class="form-check-label" for="type-{{ $type->id }}">{{ $type->name }}</label>
+            </div>
+        @endforeach
+    </div>
 </div>
 <hr>
 <div class="d-flex justify-content-between mb-3">

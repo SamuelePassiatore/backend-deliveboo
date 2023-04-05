@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
+use App\Models\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,7 @@ class RestaurantController extends Controller
     public function index(Request $request)
     {
         $restaurants = Restaurant::where('user_id', 'LIKE', Auth::user()->id)->get();
-        return view('admin.restaurants.index', compact('restaurants'));
+        return view('admin.restaurants.index', compact('restaurants', 'types'));
     }
 
     /**
@@ -32,7 +33,8 @@ class RestaurantController extends Controller
         }
 
         $restaurant = new Restaurant();
-        return view('admin.restaurants.create', compact('restaurant'));
+        $types = Type::orderBy('id')->get();
+        return view('admin.restaurants.create', compact('restaurant', 'types'));
     }
 
     /**
@@ -48,6 +50,7 @@ class RestaurantController extends Controller
             'mail' => 'required|string',
             'description' => 'required|string',
             'photo' => 'required|image',
+            'types' => 'exists:types,id'
         ], [
             'restaurant_name.required' => "È necessario inserire un nome",
             'restaurant_name.string' => "Il nome inserito non è valido",
@@ -81,6 +84,9 @@ class RestaurantController extends Controller
 
         $restaurant->save();
 
+        // Relate restaurants with types
+        if (Arr::exists($data, 'types')) $restaurant->types()->attach($data['types']);
+
         return to_route('admin.restaurants.show', $restaurant->id)
             ->with('message', "Il ristorante $restaurant->restaurant_name è stato creato con successo")
             ->with('type', 'success');
@@ -100,7 +106,10 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        return view('admin.restaurants.edit', compact('restaurant'));
+        $types = Type::orderBy('id')->get();
+        // Transform collection in array
+        $restaurant_types = $restaurant->types->pluck('id')->toArray();
+        return view('admin.restaurants.edit', compact('restaurant', 'types'));
     }
 
     /**
@@ -116,6 +125,7 @@ class RestaurantController extends Controller
             'mail' => 'required|string',
             'description' => 'required|string',
             'photo' => 'image',
+            'types' => 'exists:types,id'
         ], [
             'restaurant_name.required' => "È necessario inserire un nome",
             'restaurant_name.string' => "Il nome inserito non è valido",
@@ -140,6 +150,10 @@ class RestaurantController extends Controller
         }
 
         $restaurant->update($data);
+
+        // Assign types
+        if (Arr::exists($data, 'types')) $restaurant->types()->sync($data['types']);
+        else $restaurant->types()->detach();
 
         return to_route('admin.restaurants.show', $restaurant->id)
             ->with('type', 'success')
