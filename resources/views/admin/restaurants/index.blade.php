@@ -39,13 +39,16 @@
                         <td>{{ $restaurant->phone }}</td>
                         <td>{{ $restaurant->mail }}</td>
                         <td>
-                            @if ($restaurant->type)
+                            @forelse ($restaurant->types as $type)
                                 <span>
-                                    {{ $restaurant->type->name }}
+                                    {{ $type->name }}
+                                    @if (!$loop->last)
+                                        ,
+                                    @endif
                                 </span>
-                            @else
+                            @empty
                                 <div class="text-center">-</div>
-                            @endif
+                            @endforelse
                         </td>
                         <td>{{ $restaurant->updated_at }}</td>
                         <td>

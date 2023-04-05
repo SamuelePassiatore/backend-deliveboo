@@ -18,7 +18,7 @@ class RestaurantController extends Controller
     public function index(Request $request)
     {
         $restaurants = Restaurant::where('user_id', 'LIKE', Auth::user()->id)->get();
-        return view('admin.restaurants.index', compact('restaurants', 'types'));
+        return view('admin.restaurants.index', compact('restaurants'));
     }
 
     /**
@@ -109,7 +109,7 @@ class RestaurantController extends Controller
         $types = Type::orderBy('id')->get();
         // Transform collection in array
         $restaurant_types = $restaurant->types->pluck('id')->toArray();
-        return view('admin.restaurants.edit', compact('restaurant', 'types'));
+        return view('admin.restaurants.edit', compact('restaurant', 'types', 'restaurant_types'));
     }
 
     /**

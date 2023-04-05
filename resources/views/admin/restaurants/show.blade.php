@@ -36,8 +36,15 @@
                         </div>
                         <div class="my-2"><strong>Email: </strong> {{ $restaurant->mail }}
                         </div>
-                        <div class="my-2"><strong>Type: </strong>
-                            {{ $restaurant->type?->name ? $restaurant->type->name : '-' }}
+                        <div class="my-2"><strong>Tipo: </strong>
+                            @forelse ($restaurant->types as $type)
+                                {{ $type->name }}
+                                @if (!$loop->last)
+                                    ,
+                                @endif
+                            @empty
+                                Nessun tipo
+                            @endforelse
                         </div>
                         <div class="my-2"><strong>Creato il:
                             </strong><time>{{ $restaurant->created_at }}</time>
