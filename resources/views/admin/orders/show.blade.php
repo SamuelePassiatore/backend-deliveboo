@@ -1,74 +1,60 @@
 @extends('layouts.app')
 
-@section('title', $plate->name)
+@section('title', $order->order_code)
 
 @section('content')
 
     <div class="container">
         <header class="pt-5 text-center">
-            <h1>{{ $plate->name }}</h1>
+            <h1>{{ $order->first_name }} {{ $order->last_name }} - {{ $order->order_code }}</h1>
         </header>
 
         <section id="single-restaurant">
             <div class="container">
                 <div class="row row-cols-2">
-                    {{-- Plate IMG  --}}
-                    <div class="col d-flex justify-content-center pt-5">
-                        @if ($plate->photo)
-                            <img src="{{ asset('storage/' . $plate->photo) }}" alt="{{ $plate->name }}"
-                                class="rounded overflow-hidden ">
-                        @endif
-                    </div>
-                    {{-- PLATE CONTENT --}}
+                    {{-- ORDER CONTENT --}}
                     <div class="col d-flex justify-content-center flex-column pt-5">
-                        <div><strong>Descrizione: </strong>
-                            <p class="my-2"> {{ $plate->description }}</p>
+                        <div class="my-2"><strong>Nome: </strong> {{ $order->first_name }}</div>
+                        <div class="my-2"><strong>Cognome: </strong> {{ $order->last_name }}</div>
+                        <div class="my-2"><strong>Email: </strong> {{ $order->mail }}</div>
+                        <div class="my-2"><strong>Telefono: </strong> {{ $order->phone }}</div>
+                        <div class="my-2"><strong>Indirizzo: </strong> {{ $order->address }}</div>
+                        <div class="my-2"><strong>Piatti: </strong>
+                            @forelse ($order->plates as $plate)
+                                <span>
+                                    {{ $plate->name }}
+                                    @if (!$loop->last)
+                                        ,
+                                    @endif
+                                </span>
+                            @empty
+                                <div class="text-center">-</div>
+                            @endforelse
                         </div>
-                        <div class="my-2"><strong>Prezzo: </strong> {{ $plate->price }} € </div>
-                        <div class="my-2"><strong>Disponibile: </strong>
-                            <i
-                                class="fas fa-circle-{{ $plate->is_visible ? 'check' : 'xmark' }} {{ $plate->is_visible ? 'text-success' : 'text-danger' }}"></i>
-                        </div>
-                        <div class="my-2"><strong>Vegano: </strong>
-                            <i
-                                class="fas fa-circle-{{ $plate->is_vegan ? 'check' : 'xmark' }} 
-                                {{ $plate->is_vegan ? 'text-success' : 'text-danger' }}">
-                            </i>
-                        </div>
-                        <div class="my-2"><strong>Vegetariano: </strong>
-                            <i
-                                class="fas fa-circle-{{ $plate->is_vegetarian ? 'check' : 'xmark' }} 
-                                {{ $plate->is_vegetarian ? 'text-success' : 'text-danger' }}">
-                            </i>
-                        </div>
-                        <div class="my-2"><strong>Creato il:
-                            </strong><time>{{ $plate->created_at }}</time>
-                        </div>
-                        <div class="my-2"><strong>Modificato il:
-                            </strong><time>{{ $plate->updated_at }}</time>
-                        </div>
+                        <div class="my-2"><strong>Totale: </strong> {{ $order->total_amount }} €</div>
+                        <div class="my-2"><strong>Codice Ordine: </strong> {{ $order->order_code }}</div>
+                        <div class="my-2"><strong>Status: </strong> {{ $order->status ? 'Riuscito' : 'Respinto' }}</div>
+                        @if ($order->note)
+                            <div><strong>Note: </strong>
+                                <p class="my-2"> {{ $order->note }}</p>
+                            </div>
+                        @else
+                            <span>-</span>
+                        @endif
+
                     </div>
                 </div>
 
                 {{-- BUTTONS --}}
                 <div class="d-flex justify-content-between my-5">
-                    <a href="{{ route('admin.plates.index') }}" class="btn btn-secondary">
+                    <a href="{{ route('admin.orders.index') }}" class="btn btn-secondary">
                         <i class="fas fa-arrow-left me-2"></i>Indietro
                     </a>
-                    {{-- <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
-                        class="delete-form">
-                        @method('DELETE')
-                        @csrf
-                        <button type="submit" class="btn btn-danger mx-2"><i class="fas fa-trash me-2"></i>Elimina</button>
-                    </form>
-                    <a class="btn btn-warning" href="{{ route('admin.restaurants.edit', $restaurant->id) }}">
-                        <i class="fas fa-pencil me-2"></i>Modifica
-                    </a> --}}
                 </div>
             </div>
         </section>
-    @endsection
-</div>
+    </div>
+@endsection
 
 @section('scripts')
 

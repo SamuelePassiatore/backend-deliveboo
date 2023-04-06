@@ -5,7 +5,9 @@
 @section('content')
     <div class="container">
         <header class="my-4 d-flex align-items-center justify-content-between">
-            <h1>I tuoi ordini</h1>
+            @foreach ($orders as $order)
+                <h1>I tuoi ordini - {{ $order->restaurant->restaurant_name }}</h1>
+            @endforeach
             <div>
                 <a href="{{ route('admin.restaurants.index') }}" class="btn btn-secondary">
                     <i class="fas fa-arrow-left me-2"></i>Indietro
@@ -20,7 +22,7 @@
                     <th scope="col">Codice Ordine</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Cognome</th>
-                    <th scope="col">Piatto</th>
+                    <th scope="col">Piatti</th>
                     <th scope="col">Totale</th>
                     <th scope="col">Status</th>
                     <th scope="col"></th>
@@ -37,19 +39,22 @@
                             @forelse ($order->plates as $plate)
                                 <span>
                                     {{ $plate->name }}
+                                    @if (!$loop->last)
+                                        ,
+                                    @endif
                                 </span>
                             @empty
                                 <div class="text-center">-</div>
                             @endforelse
                         </td>
                         <td>{{ $order->total_amount }} €</td>
-                        <td>{{ $order->status }}</td>
+                        <td>{{ $order->status ? 'Riuscito' : 'Respinto' }}</td>
                         <td>
-                            {{-- <div class="d-flex">
-                                <a class="btn btn-sm btn-primary" href="{{ route('admin.order.show', $plate->id) }}">
+                            <div class="d-flex">
+                                <a class="btn btn-sm btn-primary" href="{{ route('admin.orders.show', $plate->id) }}">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                            </div> --}}
+                            </div>
                         </td>
                     </tr>
                 @empty
