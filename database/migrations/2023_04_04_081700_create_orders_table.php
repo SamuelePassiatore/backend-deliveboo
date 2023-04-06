@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('restaurant_id');
             $table->string('first_name', 60);
             $table->string('last_name', 60);
             $table->string('mail', 60);
@@ -23,6 +24,8 @@ return new class extends Migration
             $table->boolean('status');
             $table->text('note')->nullable();
             $table->timestamps();
+
+            $table->foreign('restaurant_id')->references('id')->on('restaurants')->onDelete('cascade');
         });
     }
 

@@ -28,4 +28,10 @@ class Restaurant extends Model
     {
         return $this->belongsToMany(Type::class);
     }
+
+    // Allocate the relation with plates in restaurant model
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'restaurant_id');
+    }
 }
