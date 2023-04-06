@@ -66,6 +66,7 @@ class RestaurantController extends Controller
             'description.string' => "La descrizione inserita non è valida",
             'photo.required' => "È necessario inserire un'immagine",
             'photo.image' => "L'immagine inserita non è valida",
+            'types' => "Il tipo di cucina selezionato non è valido"
         ]);
 
         $data = $request->all();
@@ -140,6 +141,7 @@ class RestaurantController extends Controller
             'description.required' => "È necessario inserire una descrizione",
             'description.string' => "La descrizione inserita non è valida",
             'photo.image' => "L'immagine inserita non è valida",
+            'types' => "Il tipo di cucina selezionato non è valido"
         ]);
 
         $data = $request->all();

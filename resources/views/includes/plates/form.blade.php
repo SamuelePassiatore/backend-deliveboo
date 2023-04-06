@@ -23,8 +23,8 @@
     </div>
     <div class="col-4">
         <div class="mb-3">
-            <label for="price" class="form-label">Prezzo:</label>
-            <input type="number" min="0.01" max="999"
+            <label for="price" class="form-label">Prezzo (€)</label>
+            <input type="number" min="0.50" max="999"
                 class="form-control @error('price') is-invalid @enderror" id="price"
                 placeholder="Inserisci il prezzo" name="price" required value="{{ old('price', $plate->price) }}">
             @error('price')
