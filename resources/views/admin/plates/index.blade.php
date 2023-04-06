@@ -7,14 +7,12 @@
         <header class="my-4 d-flex align-items-center justify-content-between">
             <h1>I tuoi piatti</h1>
             <div>
-                {{-- @if (count($restaurants) == 0)
-                    <a href="{{ route('admin.restaurants.create') }}" class="btn btn-success me-2">
-                        <i class="fas fa-plus me-2"></i>Crea ristorante
-                    </a>
-                @endif
-                <a href="{{ route('admin.home') }}" class="btn btn-secondary">
+                <a href="{{ route('admin.plates.create') }}" class="btn btn-success me-2">
+                    <i class="fas fa-plus me-2"></i>Crea piatto
+                </a>
+                <a href="{{ route('admin.restaurants.index') }}" class="btn btn-secondary">
                     <i class="fas fa-arrow-left me-2"></i>Indietro
-                </a> --}}
+                </a>
             </div>
         </header>
 

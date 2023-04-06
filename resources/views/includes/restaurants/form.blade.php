@@ -99,7 +99,7 @@
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione:</label>
             <textarea name="description" id="description" rows="5"
-                class="form-control @error('description') is-invalid @enderror" placeholder="Inserisci descrizione">{{ old('description', $restaurant->description) }}</textarea>
+                class="form-control @error('description') is-invalid @enderror" placeholder="Inserisci una descrizione">{{ old('description', $restaurant->description) }}</textarea>
             @error('description')
                 <div class="invalid-feedback">
                     {{ $message }}
