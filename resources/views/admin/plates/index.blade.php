@@ -37,18 +37,31 @@
                         <th scope="row">{{ $plate->id }}</th>
                         <td>{{ $plate->name }}</td>
                         <td>{{ $plate->price }} € </td>
-                        <td>{{ $plate->is_visible }}</td>
-                        <td>{{ $plate->is_vegan }}</td>
-                        <td>{{ $plate->is_vegetarian }}</td>
+                        <td>
+                            <i
+                                class="fas fa-circle-{{ $plate->is_visible ? 'check' : 'xmark' }} 
+                                {{ $plate->is_visible ? 'text-success' : 'text-danger' }}">
+                            </i>
+                        </td>
+                        <td><i
+                                class="fas fa-circle-{{ $plate->is_vegan ? 'check' : 'xmark' }} 
+                            {{ $plate->is_vegan ? 'text-success' : 'text-danger' }}">
+                            </i>
+                        </td>
+                        <td>
+                            <i
+                                class="fas fa-circle-{{ $plate->is_vegetarian ? 'check' : 'xmark' }} 
+                            {{ $plate->is_vegetarian ? 'text-success' : 'text-danger' }}">
+                            </i>
+                        </td>
                         <td>{{ $plate->updated_at }}</td>
-                        {{-- <td>
+                        <td>
                             <div class="d-flex">
-                                <a class="btn btn-sm btn-primary"
-                                    href="{{ route('admin.restaurants.show', $restaurant->id) }}">
+                                <a class="btn btn-sm btn-primary" href="{{ route('admin.plates.show', $plate->id) }}">
                                     <i class="fas fa-eye"></i>
                                 </a>
 
-                                <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
+                                {{-- <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
                                     class="delete-form">
                                     @csrf
                                     @method('DELETE')
@@ -59,9 +72,9 @@
                                 <a class="btn btn-sm btn-warning"
                                     href="{{ route('admin.restaurants.edit', $restaurant->id) }}">
                                     <i class="fas fa-pencil"></i>
-                                </a>
+                                </a> --}}
                             </div>
-                        </td> --}}
+                        </td>
                     </tr>
                 @empty
                     <tr>
