@@ -59,7 +59,7 @@
                                     <i class="fas fa-eye"></i>
                                 </a>
 
-                                {{-- <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
+                                <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST"
                                     class="delete-form">
                                     @csrf
                                     @method('DELETE')
@@ -67,10 +67,9 @@
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>
-                                <a class="btn btn-sm btn-warning"
-                                    href="{{ route('admin.restaurants.edit', $restaurant->id) }}">
+                                <a class="btn btn-sm btn-warning" href="{{ route('admin.plates.edit', $plate->id) }}">
                                     <i class="fas fa-pencil"></i>
-                                </a> --}}
+                                </a>
                             </div>
                         </td>
                     </tr>
