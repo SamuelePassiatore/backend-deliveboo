@@ -83,6 +83,11 @@
                 @endforelse
             </tbody>
         </table>
+        <div class="d-flex justify-content-center mt-4">
+            <a href="{{ route('admin.plates.index') }}" class="btn btn-warning fw-bold">
+                <i class="fa-solid fa-burger pe-2"></i>I tuoi piatti
+            </a>
+        </div>
     </div>
 
 @endsection

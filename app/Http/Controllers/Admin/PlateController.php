@@ -136,8 +136,12 @@ class PlateController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Plate $plate)
     {
-        //
+        $plate->delete();
+
+        return to_route('admin.plates.index')
+            ->with('message', "Il piatto $plate->name è stato cancellato con successo")
+            ->with('type', 'success');
     }
 }

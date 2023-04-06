@@ -22,7 +22,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Prezzo</th>
-                    <th scope="col">Disponibile</th>
+                    <th scope="col" class="text-center">Disponibile</th>
                     <th scope="col">Vegano</th>
                     <th scope="col">Vegetariano</th>
                     <th scope="col">Ultima modifica</th>
@@ -35,7 +35,7 @@
                         <th scope="row">{{ $plate->id }}</th>
                         <td>{{ $plate->name }}</td>
                         <td>{{ $plate->price }} € </td>
-                        <td>
+                        <td class="text-center">
                             <i
                                 class="fas fa-circle-{{ $plate->is_visible ? 'check' : 'xmark' }} 
                                 {{ $plate->is_visible ? 'text-success' : 'text-danger' }}">
