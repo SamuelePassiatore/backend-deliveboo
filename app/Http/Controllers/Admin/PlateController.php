@@ -16,7 +16,7 @@ class PlateController extends Controller
      */
     public function index(Request $request)
     {
-        $plates = Plate::where('restaurant_id', 'LIKE', Auth::user()->id)->orderBy('updated_at', 'DESC')->get();
+        $plates = Plate::where('restaurant_id', 'LIKE', Auth::user()->id)->orderBy('name', 'ASC')->get();
         return view('admin.plates.index', compact('plates'));
     }
 

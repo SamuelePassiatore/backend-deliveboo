@@ -84,8 +84,11 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-center mt-4">
-            <a href="{{ route('admin.plates.index') }}" class="btn btn-warning fw-bold">
+            <a href="{{ route('admin.plates.index') }}" class="btn btn-warning fw-bold me-2">
                 <i class="fa-solid fa-burger pe-2"></i>I tuoi piatti
+            </a>
+            <a href="{{ route('admin.orders.index') }}" class="btn btn-secondary fw-bold">
+                <i class="fa-solid fa-sheet-plastic pe-2"></i>I tuoi ordini
             </a>
         </div>
     </div>
