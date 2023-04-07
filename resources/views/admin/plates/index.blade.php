@@ -23,8 +23,8 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Prezzo</th>
                     <th scope="col" class="text-center">Disponibile</th>
-                    <th scope="col">Vegano</th>
-                    <th scope="col">Vegetariano</th>
+                    <th scope="col" class="text-center">Vegano</th>
+                    <th scope="col" class="text-center">Vegetariano</th>
                     <th scope="col">Ultima modifica</th>
                     <th scope="col"></th>
                 </tr>
@@ -41,12 +41,12 @@
                                 {{ $plate->is_visible ? 'text-success' : 'text-danger' }}">
                             </i>
                         </td>
-                        <td><i
+                        <td class="text-center"><i
                                 class="fas fa-circle-{{ $plate->is_vegan ? 'check' : 'xmark' }} 
                             {{ $plate->is_vegan ? 'text-success' : 'text-danger' }}">
                             </i>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <i
                                 class="fas fa-circle-{{ $plate->is_vegetarian ? 'check' : 'xmark' }} 
                             {{ $plate->is_vegetarian ? 'text-success' : 'text-danger' }}">
