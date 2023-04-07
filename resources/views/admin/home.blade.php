@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="p-5 d-flex flex-column justify-content-center">
-        <h1 class="text-center">Ciao {{ Auth::user()->name }}</h1>
+        <h1 class="text-center">Ciao, {{ Auth::user()->name }}</h1>
         <div class="container d-flex justify-content-center pt-4">
             @if (Auth::user()->restaurants->count() > 0)
                 <a href="{{ route('admin.restaurants.index') }}" class="btn btn-primary me-2">

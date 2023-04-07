@@ -6,7 +6,7 @@
 
     <div class="container">
         <header class="pt-5 text-center">
-            <h1>{{ $order->first_name }} {{ $order->last_name }} - {{ $order->order_code }}</h1>
+            <h1>{{ $order->first_name }} {{ $order->last_name }} - Numero ordine: {{ $order->order_code }}</h1>
         </header>
 
         <section id="single-restaurant">
