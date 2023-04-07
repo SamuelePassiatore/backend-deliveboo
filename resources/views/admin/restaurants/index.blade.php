@@ -53,7 +53,7 @@
                                 <div class="text-center">-</div>
                             @endforelse
                         </td>
-                        <td>{{ $restaurant->updated_at }}</td>
+                        <td>{{ $restaurant->getDateDiff('updated_at') }}</td>
                         <td>
                             <div class="d-flex">
                                 <a class="btn btn-sm btn-primary"

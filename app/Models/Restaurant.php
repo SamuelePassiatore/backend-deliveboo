@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -33,5 +35,17 @@ class Restaurant extends Model
     public function orders()
     {
         return $this->hasMany(Order::class, 'restaurant_id');
+    }
+
+    public function getDate($date_column)
+    {
+        $date = $this->$date_column;
+        return Carbon::create($date)->format('d-m-Y H:i:s');
+    }
+
+    public function getDateDiff($date_column)
+    {
+        $date = $this->$date_column;
+        return Carbon::parse($date)->diffForHumans();
     }
 }

@@ -47,10 +47,10 @@
                             @endforelse
                         </div>
                         <div class="my-2"><strong>Creato il:
-                            </strong><time>{{ $restaurant->created_at }}</time>
+                            </strong><time>{{ $restaurant->getDate('created_at') }}</time>
                         </div>
                         <div class="my-2"><strong>Modificato il:
-                            </strong><time>{{ $restaurant->updated_at }}</time>
+                            </strong><time>{{ $restaurant->getDate('updated_at') }}</time>
                         </div>
                     </div>
                 </div>
