@@ -40,7 +40,7 @@ class Restaurant extends Model
     public function getDate($date_column)
     {
         $date = $this->$date_column;
-        return Carbon::create($date)->format('d-m-Y H:i:s');
+        return Carbon::create($date)->format('d-m-Y H:i');
     }
 
     public function getDateDiff($date_column)

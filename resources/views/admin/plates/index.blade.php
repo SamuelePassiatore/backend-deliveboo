@@ -52,7 +52,7 @@
                             {{ $plate->is_vegetarian ? 'text-success' : 'text-danger' }}">
                             </i>
                         </td>
-                        <td>{{ $plate->updated_at }}</td>
+                        <td>{{ $plate->getDateDiff('updated_at') }}</td>
                         <td>
                             <div class="d-flex">
                                 <a class="btn btn-sm btn-primary" href="{{ route('admin.plates.show', $plate->id) }}">

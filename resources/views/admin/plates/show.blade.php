@@ -42,10 +42,10 @@
                             </i>
                         </div>
                         <div class="my-2"><strong>Creato il:
-                            </strong><time>{{ $plate->created_at }}</time>
+                            </strong><time>{{ $plate->getDate('created_at') }}</time>
                         </div>
                         <div class="my-2"><strong>Modificato il:
-                            </strong><time>{{ $plate->updated_at }}</time>
+                            </strong><time>{{ $plate->getDate('updated_at') }}</time>
                         </div>
                     </div>
                 </div>
