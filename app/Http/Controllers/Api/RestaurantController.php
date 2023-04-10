@@ -30,7 +30,11 @@ class RestaurantController extends Controller
      */
     public function show(string $id)
     {
-        $restaurant = Restaurant::with('types', 'plates')->findOrFail($id);
+
+        $restaurant = Restaurant::with(['types', 'plates' => function ($query) {
+            $query->where('is_visible', 1);
+        }])->findOrFail($id);
+
         return response()->json($restaurant);
     }
 
