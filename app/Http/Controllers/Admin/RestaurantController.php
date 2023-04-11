@@ -44,7 +44,7 @@ class RestaurantController extends Controller
     {
         $request->validate([
             'restaurant_name' => 'required|string',
-            'address' => 'required|string',
+            'address' => 'required|string|unique',
             'vat' => 'required|string',
             'phone' => 'required|string',
             'mail' => 'required|string',
@@ -55,6 +55,7 @@ class RestaurantController extends Controller
             'restaurant_name.required' => "È necessario inserire un nome",
             'restaurant_name.string' => "Il nome inserito non è valido",
             'address.required' => "È necessario inserire un indirizzo",
+            'address.unique' => "Non possono esistere due ristoranti allo stesso indirizzo",
             'address.string' => "L'indirizzo inserito non è valido",
             'vat.required' => "È necessario inserire una P.IVA",
             'vat.string' => "La P.IVA inserita non è valida",
