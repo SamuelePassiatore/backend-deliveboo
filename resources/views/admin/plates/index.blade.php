@@ -52,7 +52,7 @@
                                     </a>
 
                                     <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST"
-                                        class="delete-form">
+                                        class="delete-form" data-name="piatto">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-sm btn-white border-dark mx-2">
@@ -68,7 +68,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td scope="row" colspan="8" class="text-center">Non ci sono piatti disponibili</td>
+                            <td scope="row" colspan="8" class="text-center">Nessun piatto disponibile</td>
                         </tr>
                     @endforelse
                 </tbody>

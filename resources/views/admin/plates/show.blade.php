@@ -54,7 +54,8 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center align-items-center pt-3">
-                        <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST" class="delete-form">
+                        <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST" class="delete-form"
+                            data-name="piatto">
                             @method('DELETE')
                             @csrf
                             <button type="submit" class="btn btn-white border-dark me-3"><i
