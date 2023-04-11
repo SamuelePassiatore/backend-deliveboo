@@ -1,6 +1,6 @@
 <section class="space-y-6">
     <header>
-        <h2 class="text-lg font-medium text-dark">
+        <h2 class="text-lg font-medium text-dark-green">
             {{ __('Cancella Profilo') }}
         </h2>
 
@@ -10,7 +10,7 @@
     </header>
 
     <!-- Modal trigger button -->
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-account">
+    <button type="button" class="btn btn-white border-dark" data-bs-toggle="modal" data-bs-target="#delete-account">
         {{ __('Elimina') }}
     </button>
 
@@ -53,7 +53,7 @@
 
 
 
-                            <button type="submit" class="btn btn-danger">
+                            <button type="submit" class="btn btn-white border-dark">
                                 {{ __('Elimina Profilo') }}
                             </button>
                             <!--  -->
