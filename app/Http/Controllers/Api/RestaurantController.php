@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Plate;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
@@ -29,13 +30,22 @@ class RestaurantController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
+    { {
 
-        $restaurant = Restaurant::with(['types', 'plates' => function ($query) {
-            $query->where('is_visible', 1);
-        }])->findOrFail($id);
+            $restaurant = Restaurant::with([
+                'types',
+                'plates' => function ($query) {
+                    $query->where('is_visible', 1)->orderBy('name', 'asc');
+                }
+            ])->findOrFail($id);
 
-        return response()->json($restaurant);
+            $restaurant->plates->each(function ($plate) {
+                if ($plate->photo)
+                    $plate->photo = url('storage/' . $plate->photo);
+            });
+
+            return response()->json($restaurant);
+        }
     }
 
     /**

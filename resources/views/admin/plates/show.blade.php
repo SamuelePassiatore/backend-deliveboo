@@ -17,11 +17,21 @@
                             @if ($plate->photo)
                                 <img src="{{ asset('storage/' . $plate->photo) }}" alt="{{ $plate->name }}"
                                     class="rounded overflow-hidden ">
+<<<<<<< HEAD
                             @else
+=======
+                            @endif
+
+                            @if (!$plate->photo)
+>>>>>>> a5a75d4987e944de5e317479b9bee7a0c15681e5
                                 <img class="img-fluid"
                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
                                     alt="default-img">
                             @endif
+<<<<<<< HEAD
+=======
+
+>>>>>>> a5a75d4987e944de5e317479b9bee7a0c15681e5
                         </div>
                         {{-- PLATE CONTENT --}}
                         <div class="col d-flex justify-content-center flex-column">

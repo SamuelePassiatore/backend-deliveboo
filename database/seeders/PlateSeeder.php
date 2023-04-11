@@ -22,7 +22,7 @@ class PlateSeeder extends Seeder
                 "price" => 12.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -33,7 +33,7 @@ class PlateSeeder extends Seeder
                 "price" => 8.75,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -44,7 +44,7 @@ class PlateSeeder extends Seeder
                 "price" => 9.99,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -55,7 +55,7 @@ class PlateSeeder extends Seeder
                 "price" => 18.99,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -66,7 +66,7 @@ class PlateSeeder extends Seeder
                 "price" => 14.25,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -79,7 +79,7 @@ class PlateSeeder extends Seeder
                 "price" => 18.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -90,7 +90,7 @@ class PlateSeeder extends Seeder
                 "price" => 12.75,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -101,7 +101,7 @@ class PlateSeeder extends Seeder
                 "price" => 14.99,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -112,7 +112,7 @@ class PlateSeeder extends Seeder
                 "price" => 9.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -123,7 +123,7 @@ class PlateSeeder extends Seeder
                 "price" => 11.25,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -136,7 +136,7 @@ class PlateSeeder extends Seeder
                 "price" => 10.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -147,7 +147,7 @@ class PlateSeeder extends Seeder
                 "price" => 12.75,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -158,7 +158,7 @@ class PlateSeeder extends Seeder
                 "price" => 14.99,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -169,7 +169,7 @@ class PlateSeeder extends Seeder
                 "price" => 18.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -180,7 +180,7 @@ class PlateSeeder extends Seeder
                 "price" => 9.25,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -193,7 +193,7 @@ class PlateSeeder extends Seeder
                 "price" => 13.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -204,7 +204,7 @@ class PlateSeeder extends Seeder
                 "price" => 11.75,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -215,7 +215,7 @@ class PlateSeeder extends Seeder
                 "price" => 6.99,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -226,7 +226,7 @@ class PlateSeeder extends Seeder
                 "price" => 15.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -237,7 +237,7 @@ class PlateSeeder extends Seeder
                 "price" => 12.25,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -250,7 +250,7 @@ class PlateSeeder extends Seeder
                 "price" => 8.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -261,7 +261,7 @@ class PlateSeeder extends Seeder
                 "price" => 5.99,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -272,7 +272,7 @@ class PlateSeeder extends Seeder
                 "price" => 10.25,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -283,7 +283,7 @@ class PlateSeeder extends Seeder
                 "price" => 9.75,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -294,7 +294,7 @@ class PlateSeeder extends Seeder
                 "price" => 12.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -307,7 +307,7 @@ class PlateSeeder extends Seeder
                 "price" => 7.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -318,7 +318,7 @@ class PlateSeeder extends Seeder
                 "price" => 9.99,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -329,7 +329,7 @@ class PlateSeeder extends Seeder
                 "price" => 6.25,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -340,7 +340,7 @@ class PlateSeeder extends Seeder
                 "price" => 11.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -351,7 +351,7 @@ class PlateSeeder extends Seeder
                 "price" => 8.75,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -364,7 +364,7 @@ class PlateSeeder extends Seeder
                 "price" => 12.50,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
 
@@ -376,7 +376,7 @@ class PlateSeeder extends Seeder
                 "price" => 8.00,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
             ],
@@ -387,7 +387,7 @@ class PlateSeeder extends Seeder
                 "price" => 15.00,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
             ],
@@ -398,7 +398,7 @@ class PlateSeeder extends Seeder
                 "price" => 20.00,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
             ],
@@ -409,7 +409,7 @@ class PlateSeeder extends Seeder
                 "price" => 16.00,
                 "quantity" => 1,
                 "is_visible" => 1,
-                "photo" => "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+                "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
             ]
