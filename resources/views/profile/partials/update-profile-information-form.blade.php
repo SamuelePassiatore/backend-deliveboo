@@ -1,10 +1,10 @@
 <section>
     <header>
-        <h2 class="text-dark">
+        <h2 class="text-dark-green">
             {{ __('Informazioni Profilo') }}
         </h2>
 
-        <p class="mt-1 text-muted">
+        <p class="mt-1 text-dark">
             {{ __("Aggiorna le informazioni e l'indirizzo e-mail del tuo profilo.") }}
         </p>
     </header>
@@ -18,7 +18,7 @@
         @method('patch')
 
         <div class="mb-2">
-            <label for="name">{{ __('Nome') }}</label>
+            <label for="name" class="text-dark-green fw-semibold">{{ __('Nome') }}</label>
             <input class="form-control" type="text" name="name" id="name" autocomplete="name"
                 value="{{ old('name', $user->name) }}" required autofocus>
             @error('name')
@@ -29,7 +29,7 @@
         </div>
 
         <div class="mb-2">
-            <label for="email">
+            <label for="email" class="text-dark-green fw-semibold">
                 {{ __('Email') }}
             </label>
 
@@ -62,7 +62,7 @@
         </div>
 
         <div class="d-flex align-items-center gap-4">
-            <button class="btn btn-primary" type="submit">{{ __('Salva') }}</button>
+            <button class="btn btn-white border-dark" type="submit">{{ __('Salva') }}</button>
 
             @if (session('status') === 'profile-updated')
                 <script>

@@ -1,6 +1,6 @@
 <section>
     <header>
-        <h2 class="text-lg font-medium text-dark">
+        <h2 class="text-lg font-medium text-dark-green">
             {{ __('Modifica Password') }}
         </h2>
 
@@ -14,7 +14,7 @@
         @method('put')
 
         <div class="mb-2">
-            <label for="current_password">{{ __('Password Corrente') }}</label>
+            <label for="current_password" class="text-dark-green fw-semibold">{{ __('Password Corrente') }}</label>
             <input class="mt-1 form-control" type="password" name="current_password" id="current_password"
                 autocomplete="current-password">
             @error('current_password')
@@ -25,7 +25,7 @@
         </div>
 
         <div class="mb-2">
-            <label for="password">{{ __('Nuova Password') }}</label>
+            <label for="password" class="text-dark-green fw-semibold">{{ __('Nuova Password') }}</label>
             <input class="mt-1 form-control" type="password" name="password" id="password_" autocomplete="new-password">
             @error('password')
                 <span class="invalid-feedback mt-2" role="alert">
@@ -36,7 +36,7 @@
 
         <div class="mb-2">
 
-            <label for="password_confirmation">{{ __('Conferma Password') }}</label>
+            <label for="password_confirmation" class="text-dark-green fw-semibold">{{ __('Conferma Password') }}</label>
             <input class="mt-2 form-control" type="password" name="password_confirmation" id="password_confirmation"
                 autocomplete="new-password">
             @error('password_confirmation')
@@ -47,7 +47,7 @@
         </div>
 
         <div class="d-flex align-items-center gap-4">
-            <button type="submit" class="btn btn-primary">{{ __('Salva') }}</button>
+            <button type="submit" class="btn btn-white border-dark">{{ __('Salva') }}</button>
 
             @if (session('status') === 'password-updated')
                 <script>

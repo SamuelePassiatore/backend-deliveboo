@@ -3,7 +3,7 @@
 @section('title', $plate->name)
 
 @section('content')
-    <div class="index-main">
+    <div class="index-main d-flex flex-column justify-content-between">
         <div class="container">
             <header class="text-center pt-3">
                 <h1 class="text-dark-green">{{ $plate->name }}</h1>
@@ -17,14 +17,11 @@
                             @if ($plate->photo)
                                 <img src="{{ asset('storage/' . $plate->photo) }}" alt="{{ $plate->name }}"
                                     class="rounded overflow-hidden ">
-                            @endif
-
-                            @if (!$plate->photo)
+                            @else
                                 <img class="img-fluid"
                                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
                                     alt="default-img">
                             @endif
-
                         </div>
                         {{-- PLATE CONTENT --}}
                         <div class="col d-flex justify-content-center flex-column">
@@ -72,7 +69,7 @@
                 </div>
             </section>
         </div>
-        <div class="d-flex justify-content-end me-4">
+        <div class="d-flex justify-content-end me-4 mb-2">
             <a href="{{ route('admin.plates.index') }}" class="btn btn-white border-dark">
                 <i class="fas fa-arrow-left"></i>
             </a>
