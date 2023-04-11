@@ -65,8 +65,8 @@
             </section>
             {{-- BUTTONS --}}
             <div class="d-flex justify-content-center align-items-center pt-3">
-                <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
-                    class="delete-form">
+                <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST" class="delete-form"
+                    data-name="ristorante">
                     @method('DELETE')
                     @csrf
                     <button type="submit" class="btn btn-white border-dark me-3"><i
