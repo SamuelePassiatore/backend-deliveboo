@@ -14,14 +14,14 @@
                     <div class="row">
                         {{-- RESTAURANT IMG  --}}
                         <div class="col-6 d-flex justify-content-center pt-2">
-                            {{-- @if ($restaurant->photo)
-                                <img src="{{ asset('storage/' . $restaurant->photo) }}" alt="{{ $restaurant->restaurant_name }}"
-                                    class="rounded overflow-hidden ">
-                            @else --}}
-                            <img class="img-fluid"
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
-                                alt="default-img">
-                            {{-- @endif --}}
+                            @if ($restaurant->photo)
+                                <img src="{{ asset('storage/' . $restaurant->photo) }}"
+                                    alt="{{ $restaurant->restaurant_name }}" class="rounded overflow-hidden ">
+                            @else
+                                <img class="img-fluid"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
+                                    alt="default-img">
+                            @endif
                         </div>
                         {{-- RESTAURANT CONTENT --}}
                         <div class="col-5 d-flex justify-content-center flex-column pt-2">
