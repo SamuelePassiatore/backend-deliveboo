@@ -3,9 +3,9 @@
 @section('title', 'Ristoranti')
 
 @section('content')
-    <div class="index-main">
+    <div class="index-main d-flex flex-column justify-content-between">
         <div class="container">
-            <header class="d-flex align-items-center justify-content-between pt-4 pb-2">
+            <header class="d-flex align-items-center justify-content-between pt-5 pb-2">
                 <h1 class="text-dark-green">Il mio ristorante</h1>
                 <div>
                     @if (count($restaurants) == 0)
@@ -81,10 +81,10 @@
             </table>
             <div class="d-flex justify-content-center my-5">
                 <a href="{{ route('admin.plates.index') }}" class="btn btn-warning text-white fw-bold me-3">
-                    <i class="fa-solid fa-burger pe-2"></i>I tuoi piatti
+                    <i class="fa-solid fa-burger pe-2"></i>I miei piatti
                 </a>
                 <a href="{{ route('admin.orders.index') }}" class="btn btn-success fw-bold">
-                    <i class="fa-solid fa-sheet-plastic pe-2"></i>I tuoi ordini
+                    <i class="fa-solid fa-sheet-plastic pe-2"></i>I miei ordini
                 </a>
             </div>
         </div>

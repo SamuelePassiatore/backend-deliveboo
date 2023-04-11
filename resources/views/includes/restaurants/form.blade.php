@@ -75,7 +75,7 @@
         </div>
     </div>
     <div class="col-4">
-        <div class="mb-5">
+        <div class="mb-3">
             <label for="photo" class="form-label text-dark-green fw-bold">Foto:</label>
             <input type="file" class="form-control @error('photo') is-invalid @enderror" id="photo"
                 name="photo" value="{{ old('photo', $restaurant->photo) }}">
@@ -85,17 +85,17 @@
                 </div>
             @enderror
             {{-- <div class="input-group mb-3 @if (!$project->image) d-none @endif" id="prev-img">
-                    <button class="btn btn-outline-secondary" type="button" id="change-image">Change image</button>
-                    <input type="text" class="form-control" value="{{ $project->image }}" disabled>
-                </div> --}}
+                        <button class="btn btn-outline-secondary" type="button" id="change-image">Change image</button>
+                        <input type="text" class="form-control" value="{{ $project->image }}" disabled>
+                    </div> --}}
         </div>
     </div>
     {{-- <div class="col-2">
-            <img id="img-preview"
-                src="{{ $project->image ? asset('storage/' . $project->image) : 'https://marcolanci.it/utils/placeholder.jpg' }}"
-                alt="">
-        </div> --}}
-    <div class="col-12 d-flex align-items-center">
+                <img id="img-preview"
+                    src="{{ $project->image ? asset('storage/' . $project->image) : 'https://marcolanci.it/utils/placeholder.jpg' }}"
+                    alt="">
+            </div> --}}
+    <div class="col-12 d-flex align-items-center pt-2">
         <label for="type" class="form-label text-dark-green fw-bold pe-3 m-0">Tipo:</label>
         @foreach ($types as $type)
             <div class="form-check form-check-inline">
@@ -106,7 +106,7 @@
         @endforeach
     </div>
     <div class="col-12">
-        <div class="mb-3 mt-5">
+        <div class="mb-3 pt-3">
             <label for="description" class="form-label text-dark-green fw-bold">Descrizione:</label>
             <textarea name="description" id="description" rows="5"
                 class="form-control @error('description') is-invalid @enderror" placeholder="Inserisci una descrizione">{{ old('description', $restaurant->description) }}</textarea>
@@ -119,7 +119,7 @@
     </div>
 </div>
 <hr>
-<div class="d-flex justify-content-center mb-3 mt-5">
+<div class="d-flex justify-content-center mb-3 mt-3">
     <button type="submit" class="btn btn-white border-dark">Salva</button>
 </div>
 </form>
