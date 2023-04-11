@@ -3,8 +3,8 @@
 @section('title', $restaurant->restaurant_name)
 
 @section('content')
-    <div class="index-main d-flex flex-column align-items-end">
-        <div class="container pt-3">
+    <div class="index-main d-flex flex-column justify-content-end align-items-end">
+        <div class="container">
             <header class="text-center text-dark-green">
                 <h1>{{ $restaurant->restaurant_name }}</h1>
             </header>
@@ -13,7 +13,7 @@
                 <div class="container">
                     <div class="row">
                         {{-- RESTAURANT IMG  --}}
-                        <div class="col-6 d-flex justify-content-center pt-3">
+                        <div class="col-6 d-flex justify-content-center pt-2">
                             {{-- @if ($restaurant->photo)
                                 <img src="{{ asset('storage/' . $restaurant->photo) }}" alt="{{ $restaurant->restaurant_name }}"
                                     class="rounded overflow-hidden ">
@@ -24,7 +24,7 @@
                             {{-- @endif --}}
                         </div>
                         {{-- RESTAURANT CONTENT --}}
-                        <div class="col-5 d-flex justify-content-center flex-column pt-3">
+                        <div class="col-5 d-flex justify-content-center flex-column pt-2">
                             <div><strong class="text-dark-green">Description: </strong>
                                 <p class="my-2"> {{ $restaurant->description }}</p>
                             </div>
@@ -64,7 +64,7 @@
                 </div>
             </section>
             {{-- BUTTONS --}}
-            <div class="d-flex justify-content-center align-items-center pt-4">
+            <div class="d-flex justify-content-center align-items-center pt-3">
                 <form action="{{ route('admin.restaurants.destroy', $restaurant->id) }}" method="POST"
                     class="delete-form">
                     @method('DELETE')
@@ -77,7 +77,7 @@
                 </a>
             </div>
         </div>
-        <div class="d-flex justify-content-end me-4 button-back">
+        <div class="me-4 pb-2 d-flex justify-content-end">
             <a href="{{ route('admin.restaurants.index') }}" class="btn btn-white border-dark">
                 <i class="fas fa-arrow-left"></i>
             </a>

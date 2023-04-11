@@ -88,7 +88,7 @@
                 </a>
             </div>
         </div>
-        <div class="d-flex justify-content-end mb-4 me-4">
+        <div class="d-flex justify-content-end mb-2 me-4">
             <a href="{{ route('admin.home') }}" class="btn btn-white border-dark">
                 <i class="fas fa-arrow-left"></i>
             </a>
