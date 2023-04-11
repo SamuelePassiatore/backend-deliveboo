@@ -9,7 +9,7 @@
 
 @csrf
 <div class="row">
-    <div class="col-4">
+    <div class="col-3">
         <div class="mb-3">
             <label for="name" class="form-label">Nome:</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
@@ -21,7 +21,7 @@
             @enderror
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-3">
         <div class="mb-3">
             <label for="price" class="form-label">Prezzo (€)</label>
             <input type="number" min="0.50" max="999"
@@ -34,8 +34,8 @@
             @enderror
         </div>
     </div>
-    <div class="col-10">
-        <div class="mb-3 mt-5">
+    <div class="col-4">
+        <div class="mb-3">
             <label for="photo" class="form-label">Foto:</label>
             <input type="file" class="form-control @error('photo') is-invalid @enderror" id="photo"
                 name="photo" value="{{ old('photo', $plate->photo) }}">
@@ -55,6 +55,29 @@
                 src="{{ $project->image ? asset('storage/' . $project->image) : 'https://marcolanci.it/utils/placeholder.jpg' }}"
                 alt="">
         </div> --}}
+    <div class="d-flex justify-content-start">
+        <div class="col-2 d-flex align-items-center mt-3 mb-4">
+            <div class="form-check form-switch">
+                <label class="form-label" for="is_visible">Disponibilità:</label>
+                <input class="form-check-input" type="checkbox" role="switch" id="is_visible" name="is_visible"
+                    @if (old('is_visible', $plate->is_visible)) checked @endif>
+            </div>
+        </div>
+        <div class="col-2 d-flex align-items-center mt-3 mb-4">
+            <div class="form-check form-switch">
+                <label class="form-label" for="is_vegan">Vegano:</label>
+                <input class="form-check-input" type="checkbox" role="switch" id="is_vegan" name="is_vegan"
+                    @if (old('is_vegan', $plate->is_vegan)) checked @endif>
+            </div>
+        </div>
+        <div class="col-2 d-flex align-items-center mt-3 mb-4">
+            <div class="form-check form-switch">
+                <label class="form-label" for="is_vegetarian">Vegetariano:</label>
+                <input class="form-check-input" type="checkbox" role="switch" id="is_vegetarian" name="is_vegetarian"
+                    @if (old('is_vegetarian', $plate->is_vegetarian)) checked @endif>
+            </div>
+        </div>
+    </div>
     <div class="col-12">
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione:</label>
@@ -67,31 +90,9 @@
             @enderror
         </div>
     </div>
-    <div class="col-4 d-flex align-items-center justify-content-center mt-5 mb-4">
-        <div class="form-check form-switch">
-            <label class="form-label" for="is_visible">Disponibilità:</label>
-            <input class="form-check-input" type="checkbox" role="switch" id="is_visible" name="is_visible"
-                @if (old('is_visible', $plate->is_visible)) checked @endif>
-        </div>
-    </div>
-    <div class="col-4 d-flex align-items-center justify-content-center mt-5 mb-4">
-        <div class="form-check form-switch">
-            <label class="form-label" for="is_vegan">Vegano:</label>
-            <input class="form-check-input" type="checkbox" role="switch" id="is_vegan" name="is_vegan"
-                @if (old('is_vegan', $plate->is_vegan)) checked @endif>
-        </div>
-    </div>
-    <div class="col-4 d-flex align-items-center justify-content-center mt-5 mb-4">
-        <div class="form-check form-switch">
-            <label class="form-label" for="is_vegetarian">Vegetariano:</label>
-            <input class="form-check-input" type="checkbox" role="switch" id="is_vegetarian" name="is_vegetarian"
-                @if (old('is_vegetarian', $plate->is_vegetarian)) checked @endif>
-        </div>
-    </div>
 </div>
 <hr>
-<div class="d-flex justify-content-between mb-3">
-    <a href="{{ route('admin.plates.index') }}" class="btn btn-secondary me-2">Indietro</a>
-    <button type="submit" class="btn btn-primary">Salva</button>
+<div class="d-flex justify-content-center pt-3">
+    <button type="submit" class="btn btn-white border-dark">Salva</button>
 </div>
 </form>
