@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name', 100)->required();
             $table->text('description')->required();
             $table->decimal('price', 5, 2)->unsigned()->required();
+            $table->tinyInteger('quantity')->required()->default(1);
             $table->boolean('is_visible')->required()->default(0);
             $table->text('photo')->required();
             $table->boolean('is_vegan');

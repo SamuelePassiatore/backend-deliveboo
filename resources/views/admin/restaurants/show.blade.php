@@ -56,7 +56,7 @@
                 </div>
 
                 {{-- BUTTONS --}}
-                <div class="d-flex justify-content-between my-5">
+                <div class="d-flex justify-content-between align-items-center my-5">
                     <a href="{{ route('admin.restaurants.index') }}" class="btn btn-secondary">
                         <i class="fas fa-arrow-left me-2"></i>Indietro
                     </a>

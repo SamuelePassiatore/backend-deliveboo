@@ -22,6 +22,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Prezzo</th>
+                    <th scope="col" class="text-center">Quantità</th>
                     <th scope="col" class="text-center">Disponibile</th>
                     <th scope="col" class="text-center">Vegano</th>
                     <th scope="col" class="text-center">Vegetariano</th>

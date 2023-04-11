@@ -10,7 +10,7 @@ class Plate extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'price', 'is_visible', 'photo', 'is_vegan', 'is_vegetarian'];
+    protected $fillable = ['name', 'description', 'price', 'quantity', 'is_visible', 'photo', 'is_vegan', 'is_vegetarian'];
 
     // Allocate the relation with restaurant in plate model
     public function restaurant()

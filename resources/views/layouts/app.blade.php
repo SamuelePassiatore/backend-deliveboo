@@ -31,7 +31,9 @@
 <body>
     <div id="app">
         @include('includes.navbar')
-
+        <div class="jumbotron d-flex justify-content-center">
+            <img src="{{ Vite::asset('resources/img/jumbo1.jpg') }}" class="w-100" alt="jumbotron">
+        </div>
         <main class="container">
             @include('includes.alerts.session')
             @yield('content')

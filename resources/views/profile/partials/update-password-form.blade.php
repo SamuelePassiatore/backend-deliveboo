@@ -1,6 +1,6 @@
 <section>
     <header>
-        <h2 class="text-lg font-medium text-gray-900">
+        <h2 class="text-lg font-medium text-dark">
             {{ __('Modifica Password') }}
         </h2>
 
@@ -26,7 +26,7 @@
 
         <div class="mb-2">
             <label for="password">{{ __('Nuova Password') }}</label>
-            <input class="mt-1 form-control" type="password" name="password" id="password" autocomplete="new-password">
+            <input class="mt-1 form-control" type="password" name="password" id="password_" autocomplete="new-password">
             @error('password')
                 <span class="invalid-feedback mt-2" role="alert">
                     <strong>{{ $errors->updatePassword->get('password') }}</strong>
