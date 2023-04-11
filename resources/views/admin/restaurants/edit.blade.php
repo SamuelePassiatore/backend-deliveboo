@@ -6,7 +6,7 @@
     <div class="index-main">
         <div class="container">
             <header class="pt-4 d-flex justify-content-between align-items-center">
-                <h1 class="text-dark-green">Modifica ristorante</h1>
+                <h1 class="text-dark-green">Modifica il tuo ristorante</h1>
             </header>
             <hr>
             @include('includes.restaurants.form')

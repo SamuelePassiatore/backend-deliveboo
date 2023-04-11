@@ -12,7 +12,7 @@
                         Vedi il tuo ristorante
                     </a>
                 @else
-                    <a href="{{ route('admin.restaurants.create') }}" class="btn btn-warning fw-bold">
+                    <a href="{{ route('admin.restaurants.create') }}" class="btn btn-warning text-white fw-bold">
                         Crea il tuo ristorante
                     </a>
                 @endif

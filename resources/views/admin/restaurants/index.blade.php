@@ -7,13 +7,6 @@
         <div class="container">
             <header class="d-flex align-items-center justify-content-between pt-5 pb-2">
                 <h1 class="text-dark-green">Il mio ristorante</h1>
-                <div>
-                    @if (count($restaurants) == 0)
-                        <a href="{{ route('admin.restaurants.create') }}" class="btn btn-warning text-white me-2">
-                            <i class="fas fa-plus me-2"></i>Crea ristorante
-                        </a>
-                    @endif
-                </div>
             </header>
 
             <table class="table">
@@ -79,14 +72,23 @@
                     @endforelse
                 </tbody>
             </table>
-            <div class="d-flex justify-content-center my-5">
-                <a href="{{ route('admin.plates.index') }}" class="btn btn-warning text-white fw-bold me-3">
-                    <i class="fa-solid fa-burger pe-2"></i>I miei piatti
-                </a>
-                <a href="{{ route('admin.orders.index') }}" class="btn btn-success fw-bold">
-                    <i class="fa-solid fa-sheet-plastic pe-2"></i>I miei ordini
-                </a>
+            <div class="d-flex justify-content-center pt-3">
+                @if (count($restaurants) == 0)
+                    <a href="{{ route('admin.restaurants.create') }}" class="btn btn-white border-dark text-dark me-2">
+                        <i class="fas fa-plus me-2"></i>Crea ristorante
+                    </a>
+                @endif
             </div>
+            @if (!count($restaurants) == 0)
+                <div class="d-flex justify-content-center my-5">
+                    <a href="{{ route('admin.plates.index') }}" class="btn btn-warning text-white fw-bold me-3">
+                        <i class="fa-solid fa-burger pe-2"></i>I miei piatti
+                    </a>
+                    <a href="{{ route('admin.orders.index') }}" class="btn btn-success fw-bold">
+                        <i class="fa-solid fa-sheet-plastic pe-2"></i>I miei ordini
+                    </a>
+                </div>
+            @endif
         </div>
         <div class="d-flex justify-content-end mb-2 me-4">
             <a href="{{ route('admin.home') }}" class="btn btn-white border-dark">

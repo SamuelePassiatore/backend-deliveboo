@@ -40,7 +40,6 @@ class PlateController extends Controller
             'description' => 'required|string',
             'price' => 'required|numeric|min:0.50|max:999',
             'photo' => 'image',
-            'quantity' => 'required|numeric|min:1'
         ], [
             'name.required' => "È necessario inserire un nome",
             'name.string' => "Il nome inserito non è valido",
@@ -50,10 +49,7 @@ class PlateController extends Controller
             'price.numeric' => "Il valore inserito non è valido",
             'price.max' => "Il valore inserito supera il prezzo massimo consentito.",
             'price.min' => "Il valore inserito è inferiore al prezzo minimo previsto.",
-            'photo.image' => "L'immagine inserita non è valida",
-            'quantity.required' => "È necessario inserire una quantità",
-            'quantity.numeric' => "Il valore inserito non è valido",
-            'quantity.min' => "Il valore inserito è inferiore alla quantità minima prevista.",
+            'photo.image' => "L'immagine inserita non è valida"
         ]);
 
         $data = $request->all();
@@ -106,8 +102,7 @@ class PlateController extends Controller
             'name' => 'required|string',
             'description' => 'required|string',
             'price' => 'required|numeric|min:0.50|max:999',
-            'photo' => 'image',
-            'quantity' => 'required|numeric|min:1'
+            'photo' => 'image'
         ], [
             'name.required' => "È necessario inserire un nome",
             'name.string' => "Il nome inserito non è valido",
@@ -118,9 +113,6 @@ class PlateController extends Controller
             'price.max' => "Il valore inserito supera il prezzo massimo consentito.",
             'price.min' => "Il valore inserito è inferiore al prezzo minimo previsto.",
             'photo.image' => "L'immagine inserita non è valida",
-            'quantity.required' => "È necessario inserire una quantità",
-            'quantity.numeric' => "Il valore inserito non è valido",
-            'quantity.min' => "Il valore inserito è inferiore alla quantità minima prevista.",
         ]);
 
         $data = $request->all();
