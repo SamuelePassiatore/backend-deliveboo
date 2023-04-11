@@ -39,7 +39,7 @@ class PlateController extends Controller
             'name' => 'required|string',
             'description' => 'required|string',
             'price' => 'required|numeric|min:0.50|max:999',
-            'photo' => 'image',
+            'photo' => 'required|image',
         ], [
             'name.required' => "È necessario inserire un nome",
             'name.string' => "Il nome inserito non è valido",
@@ -49,7 +49,8 @@ class PlateController extends Controller
             'price.numeric' => "Il valore inserito non è valido",
             'price.max' => "Il valore inserito supera il prezzo massimo consentito.",
             'price.min' => "Il valore inserito è inferiore al prezzo minimo previsto.",
-            'photo.image' => "L'immagine inserita non è valida"
+            'photo.image' => "L'immagine inserita non è valida",
+            'photo.required' => "L'immagine è obbligatoria",
         ]);
 
         $data = $request->all();
