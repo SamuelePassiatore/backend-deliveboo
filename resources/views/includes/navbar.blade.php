@@ -4,8 +4,6 @@
             <div class="logo_laravel">
                 <img src="{{ asset('images/logo_base.png') }}" alt="Logo Deliveboo" width="50"
                     class="img-fluid d-inline-block me-2">
-                <img src="{{ asset('images/logo_word.png') }}" alt="Logo Deliveboo" width="150"
-                    class="img-fluid d-inline-block me-3">
             </div>
             {{-- config('app.name', 'Laravel') --}}
         </a>
@@ -36,8 +34,8 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="text-dark-green fs-5 nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
 

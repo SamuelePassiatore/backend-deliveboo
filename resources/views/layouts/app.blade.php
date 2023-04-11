@@ -31,13 +31,13 @@
 <body>
     <div id="app">
         @include('includes.navbar')
-        <div class="jumbotron d-flex justify-content-center">
-            <img src="{{ Vite::asset('resources/img/jumbo1.jpg') }}" class="w-100" alt="jumbotron">
-        </div>
-        <main class="container">
+        <main>
             @include('includes.alerts.session')
             @yield('content')
         </main>
+        <div class="footer text-white d-flex align-items-center justify-content-center fw-semibold">
+            I fantastici 5 del gruppo 4 ~ 2023
+        </div>
     </div>
 </body>
 
