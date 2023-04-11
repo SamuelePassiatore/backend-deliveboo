@@ -22,7 +22,7 @@ class RestaurantSeeder extends Seeder
                 'phone' => '1111111111',
                 'mail' => 'info@unclesamsburgers.com',
                 'description' => 'Uncle Sam\'s Burgers is the quintessential American diner experience. We serve up the juiciest burgers, hot dogs, and fries in town, along with ice-cold milkshakes and classic American pies. Come see us for a taste of the good ol\' US of A!',
-                'photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png'
+                'photo' => ''
             ], [
                 'user_id' => 2,
                 'restaurant_name' => 'Sushi Zen',
@@ -31,7 +31,7 @@ class RestaurantSeeder extends Seeder
                 'phone' => '2222222222',
                 'mail' => 'info@sushizen.jp',
                 'description' => 'Sushi Zen is a traditional Japanese sushi restaurant located in the heart of Tokyo. Our expert chefs use only the freshest fish and finest ingredients to craft exquisite sushi and sashimi dishes. Come experience the artistry and elegance of Japanese cuisine at Sushi Zen.',
-                'photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png'
+                'photo' => ''
             ], [
                 'user_id' => 3,
                 'restaurant_name' => 'Dragon Palace',
@@ -40,7 +40,7 @@ class RestaurantSeeder extends Seeder
                 'phone' => '3333333333',
                 'mail' => 'info@dragonpalace.cn',
                 'description' => 'Dragon Palace is an elegant Chinese restaurant that offers a modern take on classic Chinese dishes. Our chefs use only the freshest ingredients to create flavorful and healthy meals that will tantalize your taste buds. Come visit us for a memorable dining experience in the heart of Beijing.',
-                'photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png'
+                'photo' => ''
             ], [
                 'user_id' => 4,
                 'restaurant_name' => 'Taj Mahal',
@@ -49,7 +49,7 @@ class RestaurantSeeder extends Seeder
                 'phone' => '+4444444444',
                 'mail' => 'info@tajmahal.com',
                 'description' => 'Taj Mahal is a luxurious Indian restaurant that offers a wide range of authentic Indian dishes, from flavorful curries to tandoori delights. Our chefs use only the finest spices and ingredients to create a culinary journey through India. Come experience the magic of the Taj Mahal.',
-                'photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png'
+                'photo' => ''
             ], [
                 'user_id' => 5,
                 'restaurant_name' => 'Taco Loco',
@@ -58,7 +58,7 @@ class RestaurantSeeder extends Seeder
                 'phone' => '5555555555',
                 'mail' => 'info@tacoloco.com',
                 'description' => 'Taco Loco è un ristorante messicano autentico, dove potrai gustare le specialità della cucina tex-mex, come i tacos, le fajitas e le enchiladas.',
-                'photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png'
+                'photo' => ''
             ], [
                 'user_id' => 6,
                 'restaurant_name' => 'Pierogi Palace',
@@ -67,7 +67,7 @@ class RestaurantSeeder extends Seeder
                 'phone' => '6666666666',
                 'mail' => 'info@pierogipalace.com',
                 'description' => 'Il Pierogi Palace è un ristorante polacco che serve piatti tradizionali come i pierogi, ripieni di carne o formaggio, e il bigos, un guazzetto di carne e crauti.',
-                'photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png'
+                'photo' => ''
             ], [
                 'user_id' => 7,
                 'restaurant_name' => 'La Trattoria',
@@ -76,7 +76,7 @@ class RestaurantSeeder extends Seeder
                 'phone' => '7777777777',
                 'mail' => 'info@latrattoria.com',
                 'description' => 'La Trattoria è un ristorante italiano tradizionale, dove potrai gustare piatti come la pasta al pomodoro, la pizza margherita e la parmigiana di melanzane.',
-                'photo' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png'
+                'photo' => ''
             ],
         ];
 

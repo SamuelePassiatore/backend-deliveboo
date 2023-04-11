@@ -2,7 +2,7 @@
 @section('content')
     <div class="index-main">
         <div class="jumbotron d-flex justify-content-center">
-            <img src="{{ Vite::asset('resources/img/jumbo5.png') }}" class="w-100" alt="jumbotron">
+            <img src="{{ Vite::asset('resources/img/jumbo3.png') }}" class="w-100" alt="jumbotron">
         </div>
         <div class="p-5 d-flex flex-column justify-content-center ">
             <h1 class="text-center text-dark-green m-0">Ciao, {{ Auth::user()->name }}</h1>
