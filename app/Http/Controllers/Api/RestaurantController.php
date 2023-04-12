@@ -15,6 +15,12 @@ class RestaurantController extends Controller
     public function index()
     {
         $restaurants = Restaurant::with('types')->get();
+
+        $restaurants->each(function ($restaurant) {
+            if ($restaurant->photo)
+                $restaurant->photo = url('storage/' . $restaurant->photo);
+        });
+
         return response()->json($restaurants);
     }
 
@@ -38,6 +44,8 @@ class RestaurantController extends Controller
                     $query->where('is_visible', 1)->orderBy('name', 'asc');
                 }
             ])->findOrFail($id);
+
+            if ($restaurant->photo) $restaurant->photo = url('storage/' . $restaurant->photo);
 
             $restaurant->plates->each(function ($plate) {
                 if ($plate->photo)
