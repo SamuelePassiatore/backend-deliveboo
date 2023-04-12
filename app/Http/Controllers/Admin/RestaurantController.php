@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Restaurant;
 use App\Models\Type;
+use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -44,7 +45,7 @@ class RestaurantController extends Controller
     {
         $request->validate([
             'restaurant_name' => 'required|string',
-            'address' => 'required|string|unique',
+            'address' => 'required|string|unique:restaurants',
             'vat' => 'required|string',
             'phone' => 'required|string',
             'mail' => 'required|string',
@@ -121,7 +122,7 @@ class RestaurantController extends Controller
     {
         $request->validate([
             'restaurant_name' => 'required|string',
-            'address' => 'required|string',
+            'address' => ['required', 'string', Rule::unique('restaurants')->ignore($restaurant->id)],
             'vat' => 'required|string',
             'phone' => 'required|string',
             'mail' => 'required|string',
@@ -133,6 +134,7 @@ class RestaurantController extends Controller
             'restaurant_name.string' => "Il nome inserito non è valido",
             'address.required' => "È necessario inserire un indirizzo",
             'address.string' => "L'indirizzo inserito non è valido",
+            'address.unique' => "L'indirizzo inserito è già stato preso",
             'vat.required' => "È necessario inserire una P.IVA",
             'vat.string' => "La P.IVA inserita non è valida",
             'phone.required' => "È necessario inserire un numero di telefono",

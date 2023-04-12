@@ -33,6 +33,9 @@
         @include('includes.navbar')
         <main>
             @include('includes.alerts.session')
+            @auth
+                @include('includes.alerts.errors')
+            @endauth
             @yield('content')
         </main>
         <div class="footer text-white d-flex align-items-center justify-content-center fw-semibold">

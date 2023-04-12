@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="index-main">
+    <div class="">
         <div class="jumbotron d-flex justify-content-center">
             <img src="{{ Vite::asset('resources/img/jumbo3.png') }}" class="w-100" alt="jumbotron">
         </div>
