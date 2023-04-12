@@ -75,7 +75,7 @@
         </div>
     </div>
 
-    <div class="col-md-7">
+    <div class="col-3">
         <div class="mb-3">
             <label for="photo" class="form-label">Immagine</label>
             <input type="file" class="form-control @if ($restaurant->photo) d-none @endif" id="photo"
@@ -91,7 +91,7 @@
 
         </div>
     </div>
-    <div class="col-md-1">
+    <div class="col-2">
         <img class="img-fluid" id="img-preview"
             src="{{ $restaurant->photo ? asset('storage/' . $restaurant->photo) : 'https://marcolanci.it/utils/placeholder.jpg' }}"
             alt="">
