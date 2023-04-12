@@ -74,27 +74,31 @@
             @enderror
         </div>
     </div>
-    <div class="col-4">
+
+    <div class="col-md-7">
         <div class="mb-3">
-            <label for="photo" class="form-label text-dark-green fw-bold">Foto:</label>
-            <input type="file" class="form-control @error('photo') is-invalid @enderror" id="photo"
-                name="photo" value="{{ old('photo', $restaurant->photo) }}">
-            @error('photo')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-            @enderror
-            {{-- <div class="input-group mb-3 @if (!$project->image) d-none @endif" id="prev-img">
-                        <button class="btn btn-outline-secondary" type="button" id="change-image">Change image</button>
-                        <input type="text" class="form-control" value="{{ $project->image }}" disabled>
-                    </div> --}}
+            <label for="photo" class="form-label">Immagine</label>
+            <input type="file" class="form-control @if ($restaurant->photo) d-none @endif" id="photo"
+                name="photo">
+
+
+            {{-- Finto upload --}}
+            <div class="input-group mb-3 @if (!$restaurant->photo) d-none @endif" id="previous-image">
+                <button class="btn btn-outline-secondary" type="button" id="change-image-button">Cambia
+                    immagine</button>
+                <input type="text" class="form-control" value="{{ $restaurant->photo }}" disabled>
+            </div>
+
         </div>
     </div>
-    {{-- <div class="col-2">
-                <img id="img-preview"
-                    src="{{ $project->image ? asset('storage/' . $project->image) : 'https://marcolanci.it/utils/placeholder.jpg' }}"
-                    alt="">
-            </div> --}}
+    <div class="col-md-1">
+        <img class="img-fluid" id="img-preview"
+            src="{{ $restaurant->photo ? asset('storage/' . $restaurant->photo) : 'https://marcolanci.it/utils/placeholder.jpg' }}"
+            alt="">
+    </div>
+
+
+
     <div class="col-12 d-flex align-items-center pt-2">
         <label for="type" class="form-label text-dark-green fw-bold pe-3 m-0">Tipo:</label>
         @foreach ($types as $type)
@@ -123,3 +127,45 @@
     <button type="submit" class="btn btn-white border-dark">Salva</button>
 </div>
 </form>
+
+@section('scripts')
+    <script>
+        // Preparo il placeholder
+        const placeholder = 'https://marcolanci.it/utils/placeholder.jpg';
+
+        // Prendo gli elementii dal dom
+        const imageInput = document.getElementById('photo');
+        const imagePreview = document.getElementById('img-preview');
+
+        // Ascolto il cambio del caricamento file
+        imageInput.addEventListener('change', () => {
+            // Controllo se hoo caricato un file
+            if (imageInput.files && imageInput.files[0]) {
+                const reader = new FileReader();
+                reader.readAsDataURL(imageInput.files[0]);
+
+                // Quando sei pronto (ossia quando hai preparato il dato)
+                reader.onload = e => {
+                    imagePreview.src = e.target.result;
+                }
+
+            } else imagePreview.setAttribute('src', placeholder);
+        });
+    </script>
+
+    <script>
+        // Recupero l'input group dal DOM
+        const previousImageField = document.getElementById('previous-image');
+        const changeImageButton = document.getElementById('change-image-button');
+
+
+        const showFileInput = () => {
+            imageInput.classList.remove('d-none');
+            previousImageField.classList.add('d-none');
+            imagePreview.setAttribute('src', placeholder);
+            imageInput.click();
+        }
+
+        changeImageButton.addEventListener('click', showFileInput);
+    </script>
+@endsection

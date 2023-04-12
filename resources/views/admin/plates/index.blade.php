@@ -32,7 +32,8 @@
                                     {{ $plate->is_visible ? 'text-success' : 'text-danger' }}">
                                 </i>
                             </td>
-                            <td class="text-center"><i
+                            <td class="text-center">
+                                <i
                                     class="fas fa-circle-{{ $plate->is_vegan ? 'check' : 'xmark' }} 
                                 {{ $plate->is_vegan ? 'text-success' : 'text-danger' }}">
                                 </i>

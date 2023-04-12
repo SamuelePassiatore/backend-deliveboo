@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Plate;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,8 @@ class PlateController extends Controller
      */
     public function index(Request $request)
     {
-        $plates = Plate::where('restaurant_id', 'LIKE', Auth::user()->id)->orderBy('name', 'ASC')->get();
+        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+        $plates = Plate::orderBy('name', 'ASC')->where('restaurant_id', $restaurant->id)->get();
         return view('admin.plates.index', compact('plates'));
     }
 
@@ -35,6 +37,8 @@ class PlateController extends Controller
      */
     public function store(Request $request)
     {
+        $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
+
         $request->validate([
             'name' => 'required|string',
             'description' => 'required|string',
@@ -55,6 +59,8 @@ class PlateController extends Controller
 
         $data = $request->all();
 
+        $data['restaurant_id'] = $restaurant->id;
+
         $plate = new Plate();
 
 
@@ -69,7 +75,8 @@ class PlateController extends Controller
         $plate->is_vegan = Arr::exists($data, 'is_vegan');
         $plate->is_vegetarian = Arr::exists($data, 'is_vegetarian');
 
-        $plate->restaurant_id = Auth::id();
+        $plate->restaurant_id = $restaurant->id;
+
 
         $plate->save();
 

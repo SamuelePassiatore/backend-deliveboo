@@ -5,7 +5,7 @@
 @section('content')
     <div class="index-main d-flex flex-column justify-content-end align-items-end">
         <div class="container">
-            <header class="text-center text-dark-green">
+            <header class="text-center text-dark-green pb-4">
                 <h1>{{ $restaurant->restaurant_name }}</h1>
             </header>
 
@@ -13,14 +13,17 @@
                 <div class="container">
                     <div class="row">
                         {{-- RESTAURANT IMG  --}}
-                        <div class="col-6 d-flex justify-content-center pt-2">
+                        <div class="col-6 d-flex justify-content-center">
                             @if ($restaurant->photo)
-                                <img src="{{ asset('storage/' . $restaurant->photo) }}"
-                                    alt="{{ $restaurant->restaurant_name }}" class="rounded overflow-hidden ">
+                                <div style="height: 450px; width: 450px;">
+                                    <img src="{{ asset('storage/' . $restaurant->photo) }}"
+                                        alt="{{ $restaurant->restaurant_name }}" class="rounded overflow-hidden img-fluid">
+                                </div>
                             @else
-                                <img class="img-fluid"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
-                                    alt="default-img">
+                                <div style="height: 450px; width: 450px;">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
+                                        alt="default-img" class="img-fluid">
+                                </div>
                             @endif
                         </div>
                         {{-- RESTAURANT CONTENT --}}
