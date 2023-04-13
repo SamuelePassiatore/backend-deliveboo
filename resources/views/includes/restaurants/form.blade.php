@@ -75,25 +75,27 @@
         </div>
     </div>
 
-    <div class="col-3">
+    <div class="col-4">
         <div class="mb-3">
-            <label for="photo" class="form-label">Immagine</label>
-            <input type="file" class="form-control @if ($restaurant->photo) d-none @endif" id="photo"
-                name="photo">
-
-
+            <label for="photo" class="form-label">Foto:</label>
+            <input type="file" class="form-control @if ($restaurant->photo) d-none @endif"
+                @error('photo') is-invalid @enderror id="photo" name="photo">
             {{-- Finto upload --}}
             <div class="input-group mb-3 @if (!$restaurant->photo) d-none @endif" id="previous-image">
                 <button class="btn btn-outline-secondary" type="button" id="change-image-button">Cambia
                     immagine</button>
                 <input type="text" class="form-control" value="{{ $restaurant->photo }}" disabled>
             </div>
-
+            @error('photo')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
     <div class="col-2">
         <img class="img-fluid" id="img-preview"
-            src="{{ $restaurant->photo ? asset('storage/' . $restaurant->photo) : 'https://marcolanci.it/utils/placeholder.jpg' }}"
+            src="{{ $restaurant->photo ? asset('storage/' . $restaurant->photo) : 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png' }}"
             alt="">
     </div>
 
@@ -131,7 +133,8 @@
 @section('scripts')
     <script>
         // Preparo il placeholder
-        const placeholder = 'https://marcolanci.it/utils/placeholder.jpg';
+        const placeholder =
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png';
 
         // Prendo gli elementii dal dom
         const imageInput = document.getElementById('photo');

@@ -38,6 +38,7 @@
         <div class="footer text-white d-flex align-items-center justify-content-center fw-semibold">
             I fantastici 5 del gruppo 4 ~ 2023
         </div>
+        @yield('scripts')
     </div>
 </body>
 

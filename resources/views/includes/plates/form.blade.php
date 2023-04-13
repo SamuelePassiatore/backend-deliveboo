@@ -37,24 +37,29 @@
     <div class="col-4">
         <div class="mb-3">
             <label for="photo" class="form-label">Foto:</label>
-            <input type="file" class="form-control @error('photo') is-invalid @enderror" id="photo"
-                name="photo" value="{{ old('photo', $plate->photo) }}">
+            <input type="file" class="form-control @if ($plate->photo) d-none @endif"
+                @error('photo') is-invalid @enderror id="photo" name="photo"
+                value="{{ old('photo', $plate->photo) }}">
+            {{-- Finto upload --}}
+            <div class="input-group mb-3 @if (!$plate->photo) d-none @endif" id="previous-image">
+                <button class="btn btn-outline-secondary" type="button" id="change-image-button">Cambia
+                    immagine</button>
+                <input type="text" class="form-control" value="{{ $plate->photo }}" disabled>
+            </div>
             @error('photo')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
             @enderror
-            {{-- <div class="input-group mb-3 @if (!$project->image) d-none @endif" id="prev-img">
-                    <button class="btn btn-outline-secondary" type="button" id="change-image">Change image</button>
-                    <input type="text" class="form-control" value="{{ $project->image }}" disabled>
-                </div> --}}
         </div>
     </div>
-    {{-- <div class="col-2">
-            <img id="img-preview"
-                src="{{ $project->image ? asset('storage/' . $project->image) : 'https://marcolanci.it/utils/placeholder.jpg' }}"
-                alt="">
-        </div> --}}
+    <div class="col-2">
+        <img id="img-preview" class="img-fluid"
+            src="{{ $plate->photo ? asset('storage/' . $plate->photo) : 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png' }}"
+            alt="img-preview">
+    </div>
+
+
     <div class="d-flex justify-content-start">
         <div class="col-2 d-flex align-items-center mt-3 mb-4">
             <div class="form-check form-switch">
@@ -96,3 +101,37 @@
     <button type="submit" class="btn btn-white border-dark">Salva</button>
 </div>
 </form>
+
+@section('scripts')
+    <script>
+        const fileInput = document.getElementById('photo');
+        const imgPreview = document.getElementById('img-preview');
+
+        fileInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.addEventListener('load', function() {
+                    imgPreview.src = this.result;
+                });
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+
+    <script>
+        // Recupero l'input group dal DOM
+        const previousImageField = document.getElementById('previous-image');
+        const changeImageButton = document.getElementById('change-image-button');
+
+
+        const showFileInput = () => {
+            imageInput.classList.remove('d-none');
+            previousImageField.classList.add('d-none');
+            imagePreview.setAttribute('src', placeholder);
+            imageInput.click();
+        }
+
+        changeImageButton.addEventListener('click', showFileInput);
+    </script>
+@endsection
