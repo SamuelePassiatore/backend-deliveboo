@@ -77,7 +77,7 @@
 
     <div class="col-4">
         <div class="mb-3">
-            <label for="photo" class="form-label">Foto:</label>
+            <label for="photo" class="form-label text-dark-green fw-bold">Foto:</label>
             <input type="file" class="form-control @if ($restaurant->photo) d-none @endif"
                 @error('photo') is-invalid @enderror id="photo" name="photo">
             {{-- Finto upload --}}
@@ -94,7 +94,7 @@
         </div>
     </div>
     <div class="col-2">
-        <img class="img-fluid" id="img-preview"
+        <img class="img-fluid" id="img-preview" style="height: 120px; width: auto"
             src="{{ $restaurant->photo ? asset('storage/' . $restaurant->photo) : 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png' }}"
             alt="">
     </div>
