@@ -90,6 +90,11 @@ class PlateController extends Controller
      */
     public function show(Plate $plate)
     {
+        if ($plate->restaurant_id !== Auth::id()) {
+            return redirect()->route('admin.plates.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo piatto")
+                ->with('type', 'danger');
+        }
         return view('admin.plates.show', compact('plate'));
     }
 
@@ -98,6 +103,12 @@ class PlateController extends Controller
      */
     public function edit(Plate $plate)
     {
+        if ($plate->restaurant_id !== Auth::id()) {
+            return redirect()->route('admin.plates.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo piatto")
+                ->with('type', 'danger');
+        }
+
         return view('admin.plates.edit', compact('plate'));
     }
 
@@ -134,6 +145,12 @@ class PlateController extends Controller
         $data['is_vegan'] = Arr::exists($data, 'is_vegan');
         $data['is_vegetarian'] = Arr::exists($data, 'is_vegetarian');
 
+        if ($plate->restaurant_id !== Auth::id()) {
+            return redirect()->route('admin.plates.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo piatto")
+                ->with('type', 'danger');
+        }
+
         $plate->update($data);
 
         return to_route('admin.plates.show', $plate->id)
@@ -146,6 +163,12 @@ class PlateController extends Controller
      */
     public function destroy(Plate $plate)
     {
+        if ($plate->restaurant_id !== Auth::id()) {
+            return redirect()->route('admin.plates.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo piatto")
+                ->with('type', 'danger');
+        }
+
         $plate->delete();
 
         return to_route('admin.plates.index')
