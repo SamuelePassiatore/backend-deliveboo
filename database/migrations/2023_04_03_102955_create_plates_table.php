@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('price', 5, 2)->unsigned()->required();
             $table->tinyInteger('quantity')->required()->default(0);
             $table->boolean('is_visible')->required()->default(0);
-            $table->text('photo')->required();
+            $table->text('photo')->nullable();
             $table->boolean('is_vegan');
             $table->boolean('is_vegetarian');
             $table->timestamps();
