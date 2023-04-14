@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Rules\Rules\ValidationPlates;
+use App\Rules\ValidationPlates;
 
 class OrderPaymentRequest extends FormRequest
 {
@@ -24,8 +24,8 @@ class OrderPaymentRequest extends FormRequest
     {
         return [
             'token' => 'required',
-            'amount' => 'required'
-            // 'plateId' => ['required', new ValidationPlates()]
+            'amount' => 'required',
+            'plate' => ['required', new ValidationPlates()]
         ];
     }
 }

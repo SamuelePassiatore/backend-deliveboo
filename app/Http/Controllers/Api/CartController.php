@@ -23,7 +23,6 @@ class CartController extends Controller
     {
         $result = $gateway->transaction()->sale([
             'amount' =>  $request->amount,
-            // 'plate' => $request->plate,
             'paymentMethodNonce' => $request->token,
             'options' => [
                 'submitForSettlement' => true
