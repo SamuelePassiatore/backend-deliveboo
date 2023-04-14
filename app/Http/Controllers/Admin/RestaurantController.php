@@ -20,6 +20,12 @@ class RestaurantController extends Controller
     {
         $restaurants = Restaurant::where('user_id', 'LIKE', Auth::user()->id)->get();
         return view('admin.restaurants.index', compact('restaurants'));
+
+        if ($restaurants->user_id !== Auth::id()) {
+            return redirect()->route('admin.restaurants.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo ristorante")
+                ->with('type', 'danger');
+        }
     }
 
     /**
@@ -32,6 +38,7 @@ class RestaurantController extends Controller
                 ->with('message', "Non sei autorizzato a creare un nuovo ristorante")
                 ->with('type', 'danger');
         }
+
 
         $restaurant = new Restaurant();
         $types = Type::orderBy('id')->get();
@@ -75,7 +82,6 @@ class RestaurantController extends Controller
 
         $restaurant = new Restaurant();
 
-
         if (array_key_exists('photo', $data)) {
             $img_url = Storage::put('restaurants', $data['photo']);
             $data['photo'] = $img_url;
@@ -101,6 +107,13 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
+
+        if ($restaurant->user_id !== Auth::id()) {
+            return redirect()->route('admin.restaurants.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo ristorante")
+                ->with('type', 'danger');
+        }
+
         return view('admin.restaurants.show', compact('restaurant'));
     }
 
@@ -109,6 +122,13 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
+
+        if ($restaurant->user_id !== Auth::id()) {
+            return redirect()->route('admin.restaurants.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo ristorante")
+                ->with('type', 'danger');
+        }
+
         $types = Type::orderBy('id')->get();
         // Transform collection in array
         $restaurant_types = $restaurant->types->pluck('id')->toArray();
@@ -154,6 +174,12 @@ class RestaurantController extends Controller
             $data['photo'] = $img_url;
         }
 
+        if ($restaurant->user_id !== Auth::id()) {
+            return redirect()->route('admin.restaurants.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo ristorante")
+                ->with('type', 'danger');
+        }
+
         $restaurant->update($data);
 
         // Assign types
@@ -170,6 +196,12 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
+        if ($restaurant->user_id !== Auth::id()) {
+            return redirect()->route('admin.restaurants.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo ristorante")
+                ->with('type', 'danger');
+        }
+
         $restaurant->delete();
 
         return to_route('admin.restaurants.index')
