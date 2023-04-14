@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('phone', 15)->required();
             $table->string('mail', 60)->required();
             $table->text('description')->required();
-            $table->text('photo')->nullable();
+            $table->text('photo')->required();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
