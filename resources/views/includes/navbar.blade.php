@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md shadow-sm bg-light-blue">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+        <a class="navbar-brand d-flex align-items-center" href="{{ url('http://localhost:5174/') }}">
             <div class="logo_laravel">
                 <img src="{{ asset('images/logo_base.png') }}" alt="Logo Deliveboo" width="50"
                     class="img-fluid d-inline-block me-2">

@@ -15,12 +15,12 @@
                         {{-- RESTAURANT IMG  --}}
                         <div class="col-6 d-flex justify-content-center">
                             @if ($restaurant->photo)
-                                <div style="height: 450px; width: 450px;">
+                                <div style="width: 450px; height: 450px; object-fit: cover;">
                                     <img src="{{ asset('storage/' . $restaurant->photo) }}"
                                         alt="{{ $restaurant->restaurant_name }}" class="rounded overflow-hidden img-fluid">
                                 </div>
                             @else
-                                <div style="height: 450px; width: 450px;">
+                                <div style="width: 450px; height: 450px; object-fit: cover;">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
                                         alt="default-img" class="img-fluid">
                                 </div>

@@ -5,7 +5,7 @@
 @section('content')
     <div class="index-main d-flex flex-column justify-content-between">
         <div class="container">
-            <header class="text-center pt-3">
+            <header class="text-center pt-4 pb-3">
                 <h1 class="text-dark-green">{{ $plate->name }}</h1>
             </header>
 
@@ -15,12 +15,16 @@
                         {{-- Plate IMG  --}}
                         <div class="col d-flex justify-content-center">
                             @if ($plate->photo)
-                                <img src="{{ asset('storage/' . $plate->photo) }}" alt="{{ $plate->name }}"
-                                    class="rounded overflow-hidden ">
+                                <div style="width: 450px; height: 450px; object-fit: cover;">
+                                    <img src="{{ asset('storage/' . $plate->photo) }}" alt="{{ $plate->name }}"
+                                        class="rounded overflow-hidden img-fluid">
+                                </div>
                             @else
-                                <img class="img-fluid"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
-                                    alt="default-img">
+                                <div style="width: 450px; height: 450px; object-fit: cover;">
+                                    <img class="img-fluid"
+                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
+                                        alt="default-img">
+                                </div>
                             @endif
                         </div>
                         {{-- PLATE CONTENT --}}
@@ -54,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center align-items-center pt-3">
+                    <div class="d-flex justify-content-center align-items-center pt-5">
                         <form action="{{ route('admin.plates.destroy', $plate->id) }}" method="POST" class="delete-form"
                             data-name="piatto">
                             @method('DELETE')
