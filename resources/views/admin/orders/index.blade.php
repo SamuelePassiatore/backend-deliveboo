@@ -6,9 +6,9 @@
     <div class="index-main d-flex flex-column justify-content-between">
         <div class="container">
             <header class="pt-4 pb-3 d-flex align-items-center justify-content-between">
-                @foreach ($orders as $order)
-                    <h1 class="text-dark-green">I tuoi ordini - {{ $order->restaurant->restaurant_name }}</h1>
-                @endforeach
+
+                <h1 class="text-dark-green">I tuoi ordini</h1>
+
             </header>
 
             <table class="table">

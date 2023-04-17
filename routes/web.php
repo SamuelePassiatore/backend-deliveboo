@@ -25,6 +25,10 @@ Route::get('/admin', function () {
     return view('admin.home');
 })->middleware(['auth', 'verified'])->name('admin');
 
+Route::fallback(function () {
+    return view('404');
+});
+
 // ! TO DO
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('/admin')->group(function () {
     // Panel of control routes
@@ -37,6 +41,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('/admin')->group
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{order}', [OrderController::class, 'show'])->name('orders.show');
 });
+
 
 
 Route::middleware('auth')->group(function () {
