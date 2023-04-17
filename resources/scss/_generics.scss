@@ -14,10 +14,27 @@ td {
     color: #F8AD06;
 }
 
-.footer {
-    background-color: #F8AD06;
-    height: 50px;
-}
+footer {
+    background-color: $yellow;
+  
+    ul {
+      list-style: none;
+  
+      li {
+        text-decoration: none;
+  
+      }
+  
+      a {
+        color: #ffffff;
+        text-decoration: none;
+  
+        &:hover {
+          color: $teal;
+        }
+      }
+    }
+  }
 
 .index-main {
      min-height: calc(100vh - 126px);
@@ -26,3 +43,4 @@ td {
 body {
     font-family: 'Quicksand', sans-serif;
 }
+

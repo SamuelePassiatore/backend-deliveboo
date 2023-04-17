@@ -32,9 +32,36 @@
             {{-- @include('includes.alerts.session') --}}
             @yield('content')
         </main>
-        <div class="footer text-white d-flex align-items-center justify-content-center fw-semibold">
-            I fantastici 5 del gruppo 4 ~ 2023
-        </div>
+        <footer>
+            <div class="container">
+                <div class="row py-5 d-flex justify-content-center">
+                    <div class="col-10 col-md-4">
+                        <ul>
+                            <li><a href="#">Customer Care</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-10 col-md-4">
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-10 col-md-4">
+                        <ul>
+                            <li><a href="#">Sustainability</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Transparency Statement</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </footer>
         @yield('scripts')
     </div>
 </body>
