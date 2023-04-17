@@ -17,7 +17,7 @@
                             @if ($plate->photo)
                                 <div style="width: 450px; height: 450px; object-fit: cover;">
                                     <img src="{{ asset('storage/' . $plate->photo) }}" alt="{{ $plate->name }}"
-                                        class="rounded overflow-hidden img-fluid">
+                                        class="rounded overflow-hidden img-fluid" style="max-height: 100%;">
                                 </div>
                             @else
                                 <div style="width: 450px; height: 450px; object-fit: cover;">

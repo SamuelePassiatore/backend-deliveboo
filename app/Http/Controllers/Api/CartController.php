@@ -9,6 +9,7 @@ use App\Models\Plate;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -22,7 +23,7 @@ class CartController extends Controller
         return response()->json($data, 200);
     }
 
-    public function makePayment(OrderPaymentRequest $request, Gateway $gateway)
+    public function makePayment(OrderPaymentRequest $request, Gateway $gateway, Faker $faker)
     {
         $plate = Plate::find($request->plate);
 
@@ -34,10 +35,24 @@ class CartController extends Controller
             ]
         ]);
 
+        $new_order = new Order();
+        $new_order->restaurant_id = '5';
+        $new_order->order_code = $faker->ean8();
+        $new_order->first_name = 'first_name';
+        $new_order->last_name = '$request->last_name';
+        $new_order->address = '$request->address';
+        $new_order->mail = '$request->mail';
+        $new_order->phone = '$request->phone';
+        $new_order->total_amount = '10';
+        $new_order->status = true;
+        $new_order->save();
+
+        $new_order->plates()->attach($request->plate);
+
         if ($result->success) {
             $data = [
                 'success' => true,
-                'message' => 'transazione eseguita'
+                'message' => 'transazione eseguita',
             ];
             return response()->json($data, 200);
         } else {

@@ -3,7 +3,7 @@
 @section('title', 'Modifica ristorante')
 
 @section('content')
-    <div class="index-main">
+    <div class="index-main pb-2">
         <div class="container">
             <header class="pt-4 d-flex justify-content-between align-items-center">
                 <h1 class="text-dark-green">Modifica il tuo ristorante</h1>

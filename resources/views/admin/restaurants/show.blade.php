@@ -22,7 +22,7 @@
                             @else
                                 <div style="width: 450px; height: 450px; object-fit: cover;">
                                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png"
-                                        alt="default-img" class="img-fluid">
+                                        alt="default-img" class="img-fluid" style="max-height: 100%;">
                                 </div>
                             @endif
                         </div>
