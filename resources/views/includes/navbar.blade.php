@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md shadow-sm bg-light-blue">
+<nav class="navbar navbar-expand-md bg-light-blue">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="{{ url('http://localhost:5174/') }}">
             <div class="logo_laravel">
