@@ -77,7 +77,131 @@ class RestaurantSeeder extends Seeder
                 'mail' => 'info@latrattoria.com',
                 'description' => 'La Trattoria è un ristorante italiano tradizionale, dove potrai gustare piatti come la pasta al pomodoro, la pizza margherita e la parmigiana di melanzane.',
                 'photo' => ''
+            ], [
+                'user_id' => 8,
+                'restaurant_name' => 'Osteria Romana',
+                'address' => 'Via del Corso 10, Roma',
+                'vat' => '12345678908',
+                'phone' => '065432189',
+                'mail' => 'info@osteriaromana.it',
+                'description' => 'L\'Osteria Romana è un ristorante che si specializza nella cucina romana tradizionale, offrendo piatti come la coda alla vaccinara, la carbonara e la trippa alla romana.',
+                'photo' => ''
+            ], [
+                'user_id' => 9,
+                'restaurant_name' => 'Pizzeria Napoli',
+                'address' => 'Via Veneto 20, Roma',
+                'vat' => '12345678909',
+                'phone' => '086532746',
+                'mail' => 'info@pizzerianapoli.it',
+                'description' => 'La Pizzeria Napoli è un ristorante italiano che si specializza nella pizza napoletana tradizionale, offrendo una vasta gamma di pizze cotte nel forno a legna.',
+                'photo' => ''
+            ], [
+                'user_id' => 10,
+                'restaurant_name' => 'Cacio e Pepe',
+                'address' => 'Via dei Banchi Vecchi 12, Roma',
+                'vat' => '12345678910',
+                'phone' => '068712345',
+                'mail' => 'info@cacioepepelovers.com',
+                'description' => 'Il Cacio e Pepe è un ristorante italiano specializzato nella preparazione del famoso piatto romano, la pasta cacio e pepe.',
+                'photo' => ''
+            ], [
+                'user_id' => 11,
+                'restaurant_name' => 'Ristorante da Enzo al 29',
+                'address' => 'Via dei Vascellari 29, Roma',
+                'vat' => '12345678911',
+                'phone' => '067891234',
+                'mail' => 'info@daenzoal29.com',
+                'description' => 'Il Ristorante da Enzo al 29 è un ristorante italiano che si specializza nella cucina tradizionale romana, offrendo piatti come la coda alla vaccinara, la pasta alla gricia e il saltimbocca alla romana.',
+                'photo' => ''
+            ], [
+                'user_id' => 12,
+                'restaurant_name' => 'Ristorante Zuma',
+                'address' => 'Piazza di Spagna 9, Roma',
+                'vat' => '12345678912',
+                'phone' => '069876543',
+                'mail' => 'info@zuma.com',
+                'description' => 'Il Ristorante Zuma è un ristorante giapponese che si specializza nella cucina fusion, offrendo piatti come il sushi con foie gras e il wagyu beef con salsa ponzu.',
+                'photo' => ''
+            ], [
+                'user_id' => 13,
+                'restaurant_name' => 'Ristorante Alma',
+                'address' => 'Via Sistina 67, Roma',
+                'vat' => '12345678913',
+                'phone' => '065432871',
+                'mail' => 'info@ristorantealma.com',
+                'description' => 'Il Ristorante Alma è un ristorante italiano che si specializza nella cucina contemporanea, offrendo piatti come il risotto alla zucca con gamberi e il filetto di manzo in crosta di erbe aromatiche.',
+                'photo' => ''
+            ], [
+                'user_id' => 14,
+                'restaurant_name' => 'Antica Pesa',
+                'address' => 'Via Garibaldi 18, Roma',
+                'vat' => '12345678914',
+                'phone' => '066897456',
+                'mail' => 'info@anticapesa.it',
+                'description' => 'L\'Antica Pesa è un ristorante italiano che offre una cucina tradizionale e creativa, utilizzando solo i migliori prodotti italiani.',
+                'photo' => ''
             ],
+            [
+                'user_id' => 15,
+                'restaurant_name' => 'Hai Cenato',
+                'address' => 'Via Barberini 20, Roma',
+                'vat' => '12345678915',
+                'phone' => '066897457',
+                'mail' => 'info@haicenato.it',
+                'description' => 'Hai Cenato è un ristorante cinese che offre una cucina autentica dello Sichuan e specialità di dim sum.',
+                'photo' => ''
+            ],
+            [
+                'user_id' => 16,
+                'restaurant_name' => 'La Choza',
+                'address' => 'Via dei Coronari 50, Roma',
+                'vat' => '12345678916',
+                'phone' => '066897458',
+                'mail' => 'info@lachoza.it',
+                'description' => 'La Choza è un ristorante messicano che offre piatti tradizionali come tacos, nachos e burritos.',
+                'photo' => ''
+            ],
+            [
+                'user_id' => 17,
+                'restaurant_name' => 'The Great Burger',
+                'address' => 'Via dei Tribunali 10, Napoli',
+                'vat' => '12345678917',
+                'phone' => '081123456',
+                'mail' => 'info@thegreatburger.it',
+                'description' => 'The Great Burger è un ristorante americano che offre una vasta selezione di burger e hot dog.',
+                'photo' => ''
+            ],
+            [
+                'user_id' => 18,
+                'restaurant_name' => 'Pierogi d\'Oro',
+                'address' => 'Via Mercato 8, Milano',
+                'vat' => '12345678918',
+                'phone' => '023456789',
+                'mail' => 'info@pierogidoro.it',
+                'description' => 'Pierogi d\'Oro è un ristorante polacco che offre piatti come pierogi, zuppe e stufati tradizionali.',
+                'photo' => ''
+            ],
+            [
+                'user_id' => 19,
+                'restaurant_name' => 'Tandoori Palace',
+                'address' => 'Via Statuto 12, Torino',
+                'vat' => '12345678919',
+                'phone' => '011987654',
+                'mail' => 'info@tandooripalace.it',
+                'description' => 'Tandoori Palace è un ristorante indiano che offre piatti come il tandoori chicken e il biriyani.',
+                'photo' => ''
+            ],
+            [
+                'user_id' => 20,
+                'restaurant_name' => 'Sushi Bar',
+                'address' => 'Via San Vittore 1, Firenze',
+                'vat' => '12345678920',
+                'phone' => '055123456',
+                'mail' => 'info@sushibar.it',
+                'description' => 'Sushi Bar è un ristorante giapponese che offre una vasta selezione di sushi e sashimi.',
+                'photo' => ''
+            ]
+
         ];
 
         foreach ($restaurants as $restaurant) {
