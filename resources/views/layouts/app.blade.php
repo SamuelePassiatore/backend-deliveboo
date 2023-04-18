@@ -29,7 +29,7 @@
     <div id="app">
         @include('includes.navbar')
         <main>
-            {{-- @include('includes.alerts.session') --}}
+            @include('includes.alerts.session')
             @yield('content')
         </main>
         <footer>
