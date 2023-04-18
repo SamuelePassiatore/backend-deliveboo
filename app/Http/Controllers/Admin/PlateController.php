@@ -19,6 +19,13 @@ class PlateController extends Controller
     {
         $restaurant = Restaurant::where('user_id', Auth::user()->id)->first();
         $plates = Plate::orderBy('name', 'ASC')->where('restaurant_id', $restaurant->id)->get();
+
+        if ($plates->restaurant_id !== Auth::id()) {
+            return redirect()->route('admin.plates.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo piatto")
+                ->with('type', 'danger');
+        }
+
         return view('admin.plates.index', compact('plates'));
     }
 
@@ -29,6 +36,12 @@ class PlateController extends Controller
     {
 
         $plate = new Plate();
+
+        if ($plate->restaurant_id !== Auth::id()) {
+            return redirect()->route('admin.plates.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo piatto")
+                ->with('type', 'danger');
+        }
         return view('admin.plates.create', compact('plate'));
     }
 
@@ -62,6 +75,12 @@ class PlateController extends Controller
         $data['restaurant_id'] = $restaurant->id;
 
         $plate = new Plate();
+
+        if ($plate->restaurant_id !== Auth::id()) {
+            return redirect()->route('admin.plates.index')
+                ->with('message', "Non sei autorizzato ad accedere a questo piatto")
+                ->with('type', 'danger');
+        }
 
 
         if (array_key_exists('photo', $data)) {
