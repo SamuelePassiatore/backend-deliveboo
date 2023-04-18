@@ -33,22 +33,14 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        $restaurants = Restaurant::all();
-
         if (Auth::user()->restaurants->count() > 0) {
             return redirect()->route('admin.restaurants.index')
                 ->with('message', "Non sei autorizzato a creare un nuovo ristorante")
                 ->with('type', 'danger');
         }
 
+
         $restaurant = new Restaurant();
-
-        if ($restaurants->user_id !== Auth::id()) {
-            return redirect()->route('admin.restaurants.index')
-                ->with('message', "Non sei autorizzato ad accedere a questo ristorante")
-                ->with('type', 'danger');
-        }
-
         $types = Type::orderBy('id')->get();
         return view('admin.restaurants.create', compact('restaurant', 'types'));
     }
@@ -89,12 +81,6 @@ class RestaurantController extends Controller
         $data = $request->all();
 
         $restaurant = new Restaurant();
-
-        if ($restaurant->user_id !== Auth::id()) {
-            return redirect()->route('admin.restaurants.index')
-                ->with('message', "Non sei autorizzato ad accedere a questo ristorante")
-                ->with('type', 'danger');
-        }
 
         if (array_key_exists('photo', $data)) {
             $img_url = Storage::put('restaurants', $data['photo']);
