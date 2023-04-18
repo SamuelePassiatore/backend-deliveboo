@@ -34,23 +34,35 @@ class CartController extends Controller
             ]
         ]);
 
+        // $new_order = new Order();
+        // $new_order->restaurant_id = '2';
+        // $new_order->order_code = $faker->ean8();
+        // $new_order->first_name = 'first_name';
+        // $new_order->last_name = '$request->last_name';
+        // $new_order->address = '$request->address';
+        // $new_order->mail = '$request->mail';
+        // $new_order->phone = '$request->phone';
+        // $new_order->total_amount = '10';
+        // $new_order->status = true;
+        // $new_order->save();
+
         $new_order = new Order();
-        $new_order->restaurant_id = '2';
+        $new_order->restaurant_id = $request->restaurant_id;
         $new_order->order_code = $faker->ean8();
-        $new_order->first_name = 'first_name';
-        $new_order->last_name = '$request->last_name';
-        $new_order->address = '$request->address';
-        $new_order->mail = '$request->mail';
-        $new_order->phone = '$request->phone';
-        $new_order->total_amount = '10';
-        $new_order->status = true;
+        $new_order->first_name = $request->first_name;
+        $new_order->last_name = $request->last_name;
+        $new_order->address = $request->address;
+        $new_order->mail = $request->mail;
+        $new_order->phone = $request->phone;
+        $new_order->total_amount = $request->total_amount;
+        $new_order->status = $request->status;
         $new_order->save();
 
         $list_plates = [];
         $amount = 0;
         if (isset($request->plates)) {
             foreach ($request->plates as $plate) {
-                $amount = $amount += $plate->price;
+                $amount += $plate->price;
                 $key = $plate['id'];
                 $quantity = $plate['quantity'];
                 $price = $plate['price'];
