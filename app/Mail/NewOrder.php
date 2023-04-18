@@ -45,6 +45,7 @@ class NewOrder extends Mailable
 
             from: $this->sender_name . $this->sender_surname,
             subject: 'Nuovo ordine',
+            replyTo: 'semmisno2@protonmail.com'
         );
     }
 
@@ -65,7 +66,7 @@ class NewOrder extends Mailable
                 'address' => $this->address,
                 'note' => $this->note,
                 'order' => $this->order,
-                'text' => $this->$this->order->status ? 'L\'ordine è andato a buon fine' : 'L\'ordine è stato respinto'
+                'text' => $this->order->status
             ]
         );
     }
