@@ -15,7 +15,7 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {
-        $orders = Order::where('restaurant_id', 'LIKE', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(10);
+        $orders = Order::where('restaurant_id', 'LIKE', Auth::user()->id)->orderBy('created_at', 'DESC')->get();
         return view('admin.orders.index', compact('orders'));
     }
 

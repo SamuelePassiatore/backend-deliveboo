@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Braintree;
 use Braintree\Gateway;
 use Illuminate\Support\ServiceProvider;
 
