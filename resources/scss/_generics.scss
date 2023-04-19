@@ -54,3 +54,11 @@ body {
 .alert-danger, .alert-success, .alert-info {
   background-color: white;
 }
+
+.btn-home {
+  background-color: #019498;
+
+  &:hover {
+    background-color: #F8AD06;
+  } 
+}

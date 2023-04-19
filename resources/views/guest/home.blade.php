@@ -6,7 +6,7 @@
                 <div class="logo_laravel d-flex align-items-center">
                     <img src="{{ asset('images/logo_base.png') }}" alt="Logo Deliveboo" width="80"
                         class="img-fluid d-inline-block me-2">
-                    <h1 class="display-5 fw-bold ms-2">
+                    <h1 class="display-5 fw-bold ms-2 text-dark-green">
                         Benvenuti su Deliveboo
                     </h1>
                 </div>
@@ -22,7 +22,7 @@
                     romantica o
                     un pranzo veloce in ufficio, Deliveboo ha tutto ciò di cui hai bisogno
                     per soddisfare il tuo appetito.</p>
-                <a href="http://localhost:5174/" class="btn btn-white border-dark btn-lg" type="button">Provalo subito</a>
+                <a href="http://localhost:5174/" class="btn btn-white text-white btn-home" type="button">Provalo subito</a>
             </div>
         </div>
     </div>

@@ -71,6 +71,29 @@ class PlateSeeder extends Seeder
                 "is_vegetarian" => 0,
 
             ],
+            [
+                "restaurant_id" => 1,
+                "name" => "Buffalo wings",
+                "description" => "Ali di pollo croccanti servite con salsa piccante al burro di buffalo e bastoncini di sedano.",
+                "price" => 10.99,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 0,
+                "is_vegetarian" => 0,
+
+            ], [
+                "restaurant_id" => 1,
+                "name" => "Taco salad",
+                "description" => "Insalata di lattuga, pomodoro, cipolla, fagioli, formaggio e carne di manzo speziata servita in una conchiglia di tortilla croccante.",
+                "price" => 13.25,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 0,
+                "is_vegetarian" => 0,
+
+            ],
             // Piatti giapponesi, restaurant_id 2
             [
                 "restaurant_id" => 2,
@@ -126,6 +149,30 @@ class PlateSeeder extends Seeder
                 "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
+
+            ],
+            [
+                "restaurant_id" => 2,
+                "name" => "Onigiri",
+                "description" => "Palline di riso ripiene di pesce, verdure o uova, condite con salsa di soia e alga nori.",
+                "price" => 5.99,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 0,
+                "is_vegetarian" => 1,
+
+            ], [
+
+                "restaurant_id" => 2,
+                "name" => "Soba",
+                "description" => "Zuppa di noodles di grano saraceno, servita con verdure, uova e tofu.",
+                "price" => 13.50,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 1,
+                "is_vegetarian" => 1,
 
             ],
             // Piatti cinesi, restaurant_id 3
@@ -185,6 +232,29 @@ class PlateSeeder extends Seeder
                 "is_vegetarian" => 0,
 
             ],
+            [
+                "restaurant_id" => 3,
+                "name" => "Gamberi saltati con peperoncino",
+                "description" => "Gamberi freschi saltati in padella con peperoncino, aglio, salvia e prezzemolo, serviti con riso bianco.",
+                "price" => 15.50,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 0,
+                "is_vegetarian" => 0,
+
+            ], [
+                "restaurant_id" => 3,
+                "name" => "Agrodolce di verdure",
+                "description" => "Verdure miste in agrodolce di aceto, zucchero e salsa di soia, servite con riso basmati.",
+                "price" => 11.25,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 1,
+                "is_vegetarian" => 1,
+
+            ],
             // Piatti indiani, restaurant_id 4
             [
                 "restaurant_id" => 4,
@@ -240,6 +310,27 @@ class PlateSeeder extends Seeder
                 "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
+            ],
+            [
+                "restaurant_id" => 4,
+                "name" => "Chana masala",
+                "description" => "Ceci cotti in una salsa speziata di pomodoro e cipolla, serviti con riso basmati o naan.",
+                "price" => 10.50,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 1,
+                "is_vegetarian" => 1,
+            ], [
+                "restaurant_id" => 4,
+                "name" => "Aloo gobi",
+                "description" => "Patate e cavolfiore cucinati con spezie indiane e serviti con riso basmati o naan.",
+                "price" => 10.99,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 1,
+                "is_vegetarian" => 1,
 
             ],
             // Piatti messicani, restaurant_id 5
@@ -299,7 +390,29 @@ class PlateSeeder extends Seeder
                 "is_vegetarian" => 0,
 
             ],
-            // Piatti messicani, restaurant_id 6
+            [
+                "restaurant_id" => 5,
+                "name" => "Quesadillas",
+                "description" => "Tortilla di mais ripiena di formaggio fuso e pollo, servita con guacamole e pico de gallo.",
+                "price" => 8.99,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 0,
+                "is_vegetarian" => 0,
+            ], [
+                "restaurant_id" => 5,
+                "name" => "Fajitas",
+                "description" => "Strisce di carne di manzo o pollo, peperoni e cipolle saltati in padella e serviti su tortilla di farina, con pico de gallo, guacamole e formaggio.",
+                "price" => 11.50,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 0,
+                "is_vegetarian" => 0,
+
+            ],
+            // Piatti polacchi, restaurant_id 6
             [
                 "restaurant_id" => 6,
                 "name" => "Pierogi",
@@ -349,6 +462,27 @@ class PlateSeeder extends Seeder
                 "name" => "Kielbasa",
                 "description" => "Salsiccia polacca affumicata, servita con senape e pane di segale.",
                 "price" => 8.75,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 0,
+                "is_vegetarian" => 0,
+
+            ], [
+                "restaurant_id" => 6,
+                "name" => "Barszcz",
+                "description" => "Zuppa rossa a base di barbabietole, servita con uova sode, pancetta affumicata e crema acida.",
+                "price" => 6.95,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 0,
+                "is_vegetarian" => 1,
+            ], [
+                "restaurant_id" => 6,
+                "name" => "Gołąbki",
+                "description" => "Involtini di verza ripieni di carne macinata, riso e verdure, serviti con salsa di pomodoro.",
+                "price" => 10.25,
                 "quantity" => 0,
                 "is_visible" => 1,
                 "photo" => "",
@@ -412,6 +546,27 @@ class PlateSeeder extends Seeder
                 "photo" => "",
                 "is_vegan" => 0,
                 "is_vegetarian" => 0,
+            ], [
+                "restaurant_id" => 7,
+                "name" => "Cacio e Pepe",
+                "description" => "Un altro piatto tradizionale romano, preparato con spaghetti, pecorino romano e pepe nero.",
+                "price" => 11.00,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 0,
+                "is_vegetarian" => 1,
+            ],
+            [
+                "restaurant_id" => 7,
+                "name" => "Parmigiana di Melanzane",
+                "description" => "Una deliziosa pietanza tipica del Sud Italia, preparata con melanzane fritte, sugo di pomodoro, mozzarella e parmigiano reggiano gratinato.",
+                "price" => 14.00,
+                "quantity" => 0,
+                "is_visible" => 1,
+                "photo" => "",
+                "is_vegan" => 0,
+                "is_vegetarian" => 1,
             ]
         ];
 
