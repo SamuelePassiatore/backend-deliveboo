@@ -80,7 +80,7 @@
                 </a>
             </div>
         </div>
-        <div class="d-flex justify-content-end">
+        <div class="d-flex ms-4">
             <a href="{{ route('admin.restaurants.index') }}" class="btn btn-white border-dark mb-2 me-4">
                 <i class="fas fa-arrow-left"></i>
             </a>

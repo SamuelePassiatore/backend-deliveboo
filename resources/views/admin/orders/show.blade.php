@@ -26,7 +26,7 @@
                             <div class="my-2"><strong class="text-dark-green">Piatti: </strong>
                                 @forelse ($order->plates as $plate)
                                     <span>
-                                        {{ $plate->name }}
+                                        {{ $plate->name }} [{{ $plate->quantity }}]
                                         @if (!$loop->last)
                                             ,
                                         @endif
@@ -35,7 +35,8 @@
                                     <div class="text-center">-</div>
                                 @endforelse
                             </div>
-                            <div class="my-2"><strong class="text-dark-green">Totale: </strong> {{ $order->total_amount }}
+                            <div class="my-2"><strong class="text-dark-green">Totale: </strong>
+                                {{ $order->total_amount }}
                                 €
                             </div>
                             <div class="my-2"><strong class="text-dark-green">Codice Ordine: </strong>
@@ -57,7 +58,7 @@
                 </div>
             </section>
         </div>
-        <div class="d-flex justify-content-end mb-2 me-4">
+        <div class="d-flex mb-2 ms-4">
             <a href="{{ route('admin.orders.index') }}" class="btn btn-white border-dark">
                 <i class="fas fa-arrow-left"></i>
             </a>

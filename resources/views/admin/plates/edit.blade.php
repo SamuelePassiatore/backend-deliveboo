@@ -11,7 +11,7 @@
             <hr>
             @include('includes.plates.form')
         </div>
-        <div class="d-flex justify-content-end align-items-end mb-2 me-4">
+        <div class="d-flex mb-2 ms-4">
             <a href="{{ route('admin.plates.index') }}" class="btn btn-white border-dark">
                 <i class="fas fa-arrow-left"></i>
             </a>

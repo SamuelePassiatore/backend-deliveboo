@@ -3,7 +3,7 @@
 @section('title', $restaurant->restaurant_name)
 
 @section('content')
-    <div class="index-main d-flex flex-column justify-content-end align-items-end">
+    <div class="index-main d-flex flex-column justify-content-end">
         <div class="container">
             <header class="text-center text-dark-green pb-4">
                 <h1>{{ $restaurant->restaurant_name }}</h1>
@@ -80,7 +80,7 @@
                 </a>
             </div>
         </div>
-        <div class="me-4 pb-2 d-flex justify-content-end">
+        <div class="ms-4 pb-2 d-flex justify-content-start">
             <a href="{{ route('admin.restaurants.index') }}" class="btn btn-white border-dark">
                 <i class="fas fa-arrow-left"></i>
             </a>

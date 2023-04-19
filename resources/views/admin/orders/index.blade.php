@@ -59,8 +59,15 @@
                     @endforelse
                 </tbody>
             </table>
+            <div class="d-flex justify-content-end">
+                @if ($orders->hasPages())
+                    <hr>
+                    {{ $orders->links() }}
+                @endif
+            </div>
+
         </div>
-        <div class="d-flex justify-content-end mb-2 me-4">
+        <div class="d-flex mb-2 ms-4">
             <a href="{{ route('admin.restaurants.index') }}" class="btn btn-white border-dark">
                 <i class="fas fa-arrow-left"></i>
             </a>

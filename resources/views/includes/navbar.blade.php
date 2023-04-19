@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="{{ url('http://localhost:5174/') }}">
             <div class="logo_laravel">
-                <img src="{{ asset('images/logo_base.png') }}" alt="Logo Deliveboo" width="60"
+                <img src="{{ asset('images/logo_base.png') }}" alt="Logo Deliveboo" width="80"
                     class="img-fluid d-inline-block me-2">
             </div>
             {{-- config('app.name', 'Laravel') --}}

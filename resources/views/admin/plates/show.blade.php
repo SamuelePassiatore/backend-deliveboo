@@ -73,7 +73,7 @@
                 </div>
             </section>
         </div>
-        <div class="d-flex justify-content-end me-4 mb-2">
+        <div class="d-flex ms-4 mb-2">
             <a href="{{ route('admin.plates.index') }}" class="btn btn-white border-dark">
                 <i class="fas fa-arrow-left"></i>
             </a>
