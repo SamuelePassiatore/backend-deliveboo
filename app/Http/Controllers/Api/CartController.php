@@ -38,44 +38,44 @@ class CartController extends Controller
             ]
         ]);
 
+        // $new_order = new Order();
+        // $new_order->restaurant_id = '2';
+        // $new_order->order_code = $faker->ean8();
+        // $new_order->first_name = $request->first_name;
+        // $new_order->last_name = '$request->last_name';
+        // $new_order->address = '$request->address';
+        // $new_order->mail = 'giuseppe@boolean.it';
+        // $new_order->phone = '$request->phone';
+        // $new_order->total_amount = '10';
+        // $new_order->status = true;
+        // $new_order->save();
+
         $new_order = new Order();
-        $new_order->restaurant_id = '2';
+        $new_order->restaurant_id = $request->products[0]['restaurant_id'];
         $new_order->order_code = $faker->ean8();
-        $new_order->first_name = 'first_name';
-        $new_order->last_name = '$request->last_name';
-        $new_order->address = '$request->address';
-        $new_order->mail = 'giuseppe@boolean.it';
-        $new_order->phone = '$request->phone';
-        $new_order->total_amount = '10';
+        $new_order->first_name = $request->first_name;
+        $new_order->last_name = $request->last_name;
+        $new_order->address = $request->address;
+        $new_order->mail = $request->mail;
+        $new_order->phone = $request->phone;
+        $new_order->total_amount = $request->total_amount;
         $new_order->status = true;
         $new_order->save();
 
-        // $new_order = new Order();
-        // $new_order->restaurant_id = $request->restaurant_id;
-        // $new_order->order_code = $faker->ean8();
-        // $new_order->first_name = $request->first_name;
-        // $new_order->last_name = $request->last_name;
-        // $new_order->address = $request->address;
-        // $new_order->mail = $request->mail;
-        // $new_order->phone = $request->phone;
-        // $new_order->total_amount = $request->total_amount;
-        // $new_order->status = $request->status;
-        // $new_order->save();
+        $restaurant = Restaurant::find($new_order->restaurant_id);
+        $restaurant_email = $restaurant->mail;
 
-        $list_plates = [];
-        $amount = 0;
-        if (isset($request->plates)) {
-            foreach ($request->plates as $plate) {
-                $amount += $plate->price;
+        if (isset($request->products)) {
+            foreach ($request->products as $plate) {
                 $key = $plate['id'];
                 $quantity = $plate['quantity'];
                 $price = $plate['price'];
-                $list_plates[$key] = ['quantity' => $quantity, 'current_price' => $price];
+                $new_order->plates()->attach($key, ['quantity' => $quantity]);
             }
         }
 
-        $new_order->plates()->attach($request->plate);
-
+        Mail::to($request->mail)->send(new NewOrder($new_order, $request->first_name, $request->last_name, $request->mail, $request->phone, $request->address, ''));
+        Mail::to($restaurant_email)->send(new NewOrder($new_order, $request->first_name, $request->last_name, $request->mail, $request->phone, $request->address, ''));
 
         if ($result->success) {
             $data = [
@@ -83,8 +83,6 @@ class CartController extends Controller
                 'message' => 'transazione eseguita'
             ];
 
-            Mail::to($new_order->mail)->send(new NewOrder($new_order, $request->first_name, $request->last_name, $request->mail, $request->phone, $request->address, ''));
-            Mail::to('ristoratore@generico.com')->send(new NewOrder($new_order, $request->first_name, $request->last_name, $request->mail, $request->phone, $request->address, ''));
 
             return response()->json($data, 200);
         } else {
@@ -93,17 +91,6 @@ class CartController extends Controller
                 'message' => 'transazione fallita'
             ];
 
-            $new_order = new Order();
-            $new_order->restaurant_id = '2';
-            $new_order->order_code = $faker->ean8();
-            $new_order->first_name = 'first_name';
-            $new_order->last_name = '$request->last_name';
-            $new_order->address = '$request->address';
-            $new_order->mail = 'giuseppe@boolean.it';
-            $new_order->phone = '$request->phone';
-            $new_order->total_amount = '10';
-            $new_order->status = false;
-            $new_order->save();
 
             return response()->json($data, 401);
         }

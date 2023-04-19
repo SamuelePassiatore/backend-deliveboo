@@ -24,7 +24,7 @@ class OrderPaymentRequest extends FormRequest
     {
         return [
             'token' => 'required',
-            'plate' => ['required', new ValidationPlates()]
+            'products' => ['required', new ValidationPlates()]
         ];
     }
 }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\TypeController;
+use App\Http\Controllers\Api\CheckoutController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,5 @@ Route::apiResource('restaurants', RestaurantController::class);
 
 Route::get('orders/generate', [CartController::class, 'generate']);
 Route::post('orders/make/payment', [CartController::class, 'makePayment']);
+
+Route::post('orders/checkout', [CheckoutController::class, 'checkout']);

@@ -43,7 +43,7 @@ class NewOrder extends Mailable
     {
         return new Envelope(
 
-            from: $this->sender_name . $this->sender_surname,
+            from: env('MAIL_FROM_ADDRESS'),
             subject: 'Nuovo ordine',
             replyTo: 'semmisno2@protonmail.com'
         );
