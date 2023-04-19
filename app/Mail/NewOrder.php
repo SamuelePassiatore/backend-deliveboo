@@ -45,7 +45,7 @@ class NewOrder extends Mailable
 
             from: env('MAIL_FROM_ADDRESS'),
             subject: 'Nuovo ordine',
-            replyTo: 'semmisno2@protonmail.com'
+            replyTo: 'samuw.978@gmail.com'
         );
     }
 

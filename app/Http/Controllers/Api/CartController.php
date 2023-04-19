@@ -37,18 +37,6 @@ class CartController extends Controller
             ]
         ]);
 
-        // $new_order = new Order();
-        // $new_order->restaurant_id = '2';
-        // $new_order->order_code = $faker->ean8();
-        // $new_order->first_name = $request->first_name;
-        // $new_order->last_name = '$request->last_name';
-        // $new_order->address = '$request->address';
-        // $new_order->mail = 'giuseppe@boolean.it';
-        // $new_order->phone = '$request->phone';
-        // $new_order->total_amount = '10';
-        // $new_order->status = true;
-        // $new_order->save();
-
         $new_order = new Order();
         $new_order->restaurant_id = $request->products[0]['restaurant_id'];
         $new_order->order_code = $faker->ean8();
