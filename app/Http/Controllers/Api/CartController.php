@@ -26,16 +26,29 @@ class CartController extends Controller
     //     return response()->json($data, 200);
     // }
 
-    public function makePayment(OrderPaymentRequest $request, Gateway $gateway, Faker $faker)
+    public function makePayment(Request $request, Gateway $gateway, Faker $faker)
     {
         $plate = Plate::find($request->plate);
 
         // $result = $gateway->transaction()->sale([
+        //     'amount' => $request->amount,
         //     'paymentMethodNonce' => $request->token,
         //     'options' => [
         //         'submitForSettlement' => true
         //     ]
         // ]);
+
+        // $new_order = new Order();
+        // $new_order->restaurant_id = '2';
+        // $new_order->order_code = $faker->ean8();
+        // $new_order->first_name = $request->first_name;
+        // $new_order->last_name = '$request->last_name';
+        // $new_order->address = '$request->address';
+        // $new_order->mail = 'giuseppe@boolean.it';
+        // $new_order->phone = '$request->phone';
+        // $new_order->total_amount = '10';
+        // $new_order->status = true;
+        // $new_order->save();
 
         $new_order = new Order();
         $new_order->restaurant_id = $request->products[0]['restaurant_id'];
@@ -46,6 +59,7 @@ class CartController extends Controller
         $new_order->mail = $request->mail;
         $new_order->phone = $request->phone;
         $new_order->total_amount = $request->total_amount;
+        $new_order->note = $request->note;
         $new_order->status = true;
         $new_order->save();
 
@@ -77,27 +91,6 @@ class CartController extends Controller
         //             'success' => false,
         //             'message' => 'transazione fallita'
         //         ];
-
-        //         $new_order = new Order();
-        //         $new_order->restaurant_id = $request->products[0]['restaurant_id'];
-        //         $new_order->order_code = $faker->ean8();
-        //         $new_order->first_name = $request->first_name;
-        //         $new_order->last_name = $request->last_name;
-        //         $new_order->address = $request->address;
-        //         $new_order->mail = $request->mail;
-        //         $new_order->phone = $request->phone;
-        //         $new_order->total_amount = $request->total_amount;
-        //         $new_order->status = false;
-        //         $new_order->save();
-
-        //         if (isset($request->products)) {
-        //             foreach ($request->products as $plate) {
-        //                 $key = $plate['id'];
-        //                 $quantity = $plate['quantity'];
-        //                 $price = $plate['price'];
-        //                 $new_order->plates()->attach($key, ['quantity' => $quantity]);
-        //             }
-        //         }
 
 
         //         return response()->json($data, 401);
