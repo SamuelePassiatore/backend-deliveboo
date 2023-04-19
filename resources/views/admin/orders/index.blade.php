@@ -46,7 +46,7 @@
                             <td>
                                 <div class="d-flex">
                                     <a class="btn btn-sm btn-white border-dark"
-                                        href="{{ route('admin.orders.show', $plate->id) }}">
+                                        href="{{ route('admin.orders.show', $order->id) }}">
                                         <i class="fas fa-eye"></i>
                                     </a>
                                 </div>

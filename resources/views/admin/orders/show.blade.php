@@ -42,15 +42,16 @@
                                 {{ $order->order_code }}</div>
                             <div class="my-2"><strong class="text-dark-green">Status: </strong>
                                 {{ $order->status ? 'Riuscito' : 'Respinto' }}</div>
-                            @if ($order->note)
-                                <div class="my-2">
-                                    <strong class="text-dark-green">Note: </strong>
-                                    <p> {{ $order->note }}</p>
-                                </div>
-                            @else
-                                <span>-</span>
-                            @endif
-
+                            <div class="d-flex">
+                                <strong class="text-dark-green pe-2">Note: </strong>
+                                @if ($order->note)
+                                    <div class="my-2">
+                                        <p> {{ $order->note }}</p>
+                                    </div>
+                                @else
+                                    <span>-</span>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
