@@ -26,7 +26,7 @@
                             <div class="my-2"><strong class="text-dark-green">Piatti: </strong>
                                 @forelse ($order->plates as $plate)
                                     <span>
-                                        {{ $plate->name }} [{{ $plate->quantity }}]
+                                        {{ $plate->name }}
                                         @if (!$loop->last)
                                             ,
                                         @endif
@@ -46,7 +46,7 @@
                             <div class="d-flex">
                                 <strong class="text-dark-green pe-2">Note: </strong>
                                 @if ($order->note)
-                                    <div class="my-2">
+                                    <div>
                                         <p> {{ $order->note }}</p>
                                     </div>
                                 @else

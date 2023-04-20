@@ -20,6 +20,7 @@
                         <th scope="col" class="text-dark-green">Piatti</th>
                         <th scope="col" class="text-dark-green">Totale</th>
                         <th scope="col" class="text-dark-green">Status</th>
+                        <th scope="col" class="text-dark-green">Creato il</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -43,6 +44,7 @@
                             </td>
                             <td>{{ $order->total_amount }} €</td>
                             <td>{{ $order->status ? 'Riuscito' : 'Respinto' }}</td>
+                            <td>{{ $order->created_at->format('d/m/Y H:i') }}</td>
                             <td>
                                 <div class="d-flex">
                                     <a class="btn btn-sm btn-white border-dark"
@@ -54,7 +56,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td scope="row" colspan="7" class="text-center">Non ci sono ordini al momento</td>
+                            <td scope="row" colspan="8" class="text-center">Non ci sono ordini al momento</td>
                         </tr>
                     @endforelse
                 </tbody>
