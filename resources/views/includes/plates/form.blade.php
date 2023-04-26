@@ -98,7 +98,7 @@
 </div>
 <hr>
 <div class="d-flex justify-content-center pt-3">
-    <button type="submit" class="btn btn-white border-dark">Salva</button>
+    <button type="submit" class="btn btn-save">Salva</button>
 </div>
 </form>
 

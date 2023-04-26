@@ -35,34 +35,34 @@
         </main>
         <footer>
             <div class="container">
-                <div class="row py-5 d-flex justify-content-center">
-                    <div class="col-10 col-md-4">
-                        <ul>
-                            <li><a href="#">Customer Care</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Terms and conditions</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-10 col-md-4">
-                        <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Refund Policy</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-10 col-md-4">
-                        <ul>
-                            <li><a href="#">Sustainability</a></li>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Transparency Statement</a></li>
-                        </ul>
-                    </div>
+              <div class="row py-5 d-flex justify-content-center">
+                <div class="col-10 col-md-4 text-center">
+                  <ul>
+                    <li><a href="#">Assistenza clienti</a></li>
+                    <li><a href="#">Contattaci</a></li>
+                    <li><a href="#">Termini e condizioni</a></li>
+                  </ul>
                 </div>
-
+                <div class="col-10 col-md-4 text-center">
+                  <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Rimborsi</a></li>
+                    <li><a href="#">FAQ</a></li>
+                  </ul>
+                </div>
+        
+                <div class="col-10 col-md-4 text-center">
+                  <ul>
+                    <li><a href="#">Sostenibilità</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Transparency Statement</a></li>
+                  </ul>
+                </div>
+              </div>
+        
             </div>
-
-        </footer>
+        
+          </footer>
         @yield('scripts')
     </div>
 </body>

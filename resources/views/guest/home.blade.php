@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="index-main">
-        <div class="jumbotron bg-light rounded-3 h-100">
+        <div class="jumbotron rounded-3 h-100">
             <div class="container py-5 d-flex flex-column justify-content-center align-items-center h-100">
                 <div class="logo_laravel d-flex align-items-center">
                     <img src="{{ asset('images/logo_base.png') }}" alt="Logo Deliveboo" width="80"

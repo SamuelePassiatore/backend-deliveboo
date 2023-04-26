@@ -75,7 +75,7 @@
                 </tbody>
             </table>
             <div class="d-flex justify-content-center pt-3">
-                <a href="{{ route('admin.plates.create') }}" class="btn btn-white border-dark me-2">
+                <a href="{{ route('admin.plates.create') }}" class="btn btn-save me-2">
                     <i class="fas fa-plus me-2"></i>Crea piatto
                 </a>
             </div>
